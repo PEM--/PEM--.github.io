@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --progress --colors",
     "watch": "webpack --progress --colors --watch",
+    "server": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com> (http://pem-musing.blogspot.fr/)",
