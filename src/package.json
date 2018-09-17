@@ -2,6 +2,26 @@
   "name": "pem--.github.io",
   "license": "MIT",
   "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com>",
+  "description": "PEM's blog",
+  "version": "1.0.0",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.7.1",
+    "gatsby": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-typography": "next",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.13",
+    "styled-components": "latest",
+    "typography": "^0.16.17",
+    "typography-theme-lawton": "^0.15.10"
+  },
+  "keywords": [
+    "gatsby", "math", "machine learning", "blog"
+  ],
   "scripts": {
     "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public",
     "develop": "gatsby develop",
@@ -9,44 +29,13 @@
     "serve": "gatsby serve",
     "ssr": "yarn build && yarn serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
-    "build:dir": "mkdir -p public/icons/",
-    "build:favicons": "node scripts/favicons",
-    "build": "yarn build:dir && yarn build:favicons && gatsby build",
-    "test": "ava **/*.test.js --verbose"
-  },
-  "dependencies": {
-    "@reach/dialog": "^0.1.2",
-    "@reach/router": "^1.1.1",
-    "@reach/visually-hidden": "^0.1.1",
-    "babel-plugin-styled-components": "^1.6.4",
-    "gatsby": "next",
-    "gatsby-image": "next",
-    "gatsby-plugin-offline": "next",
-    "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-sharp": "next",
-    "gatsby-plugin-sitemap": "next",
-    "gatsby-plugin-styled-components": "next",
-    "gatsby-plugin-webpack-size": "0.0.2",
-    "gatsby-source-filesystem": "next",
-    "gatsby-transformer-json": "next",
-    "gatsby-transformer-remark": "next",
-    "gatsby-transformer-sharp": "next",
-    "intersection-observer": "^0.5.0",
-    "prop-types": "15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0",
-    "react-pose": "^3.3.2",
-    "styled-components": "beta"
+    "build": "gatsby build"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "chrome-launcher": "^0.10.2",
-    "directory-named-webpack-plugin": "4.0.0",
-    "favicons": "^5.1.1",
-    "lighthouse": "^3.1.1",
-    "node-gyp": "^3.8.0",
-    "prettier": "^1.14.2",
-    "why-did-you-update": "0.1.1"
+    "prettier": "^1.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }

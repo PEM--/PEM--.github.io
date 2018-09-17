@@ -1,24 +1,14 @@
-const siteConfig = require('./site-config');
-
 module.exports = {
   siteMetadata: {
-    ...siteConfig,
+    title: 'PEM',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
-    `gatsby-transformer-json`,
-    `gatsby-transformer-remark`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content`,
+        pathToConfigModule: `src/utils/typography.js`,
       },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-webpack-size`,
+    }
   ],
-};
+}
