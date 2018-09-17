@@ -1,7 +1,6 @@
 const siteConfig = require('./site-config');
 
 module.exports = {
-  pathPrefix: '/pem--.github.io',
   siteMetadata: {
     ...siteConfig,
   },
