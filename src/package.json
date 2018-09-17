@@ -27,13 +27,14 @@
     "blog"
   ],
   "scripts": {
-    "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public",
+    "build": "gatsby build",
+    "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public && rm -rf .cache",
     "develop": "gatsby develop",
     "deploy": "yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
-    "serve": "gatsby serve",
-    "ssr": "yarn build && yarn serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
-    "build": "gatsby build"
+    "prune": "yarn clean && rm -rf node_modules",
+    "serve": "gatsby serve",
+    "ssr": "yarn build && yarn serve"
   },
   "devDependencies": {
     "prettier": "^1.14.2"
