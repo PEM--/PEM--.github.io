@@ -3,9 +3,9 @@
   "license": "MIT",
   "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com>",
   "scripts": {
-    "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\;",
+    "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public",
     "develop": "gatsby develop",
-    "deploy": "yarn clean && gatsby build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
+    "deploy": "yarn clean && yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
     "serve": "gatsby serve",
     "ssr": "yarn build && yarn serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
