@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, Link, graphql } from  'gatsby'
-import { element } from 'prop-types'
+import { arrayOf, element } from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Main from '../components/main'
@@ -68,6 +68,6 @@ const Layout = ({ children }) => (<Fragment>
   </Main>
 </Fragment>)
 Layout.propTypes = {
-  childre: element.isRequired
+  children: arrayOf(element).isRequired
 }
 export default Layout
