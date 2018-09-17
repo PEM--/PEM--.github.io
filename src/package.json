@@ -3,14 +3,15 @@
   "license": "MIT",
   "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com>",
   "scripts": {
+    "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\;",
     "develop": "gatsby develop",
-    "deploy": "gatsby build && cp -rf public/* ..",
+    "deploy": "yarn clean && gatsby build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
     "serve": "gatsby serve",
-    "ssr": "npm run build && npm run serve",
+    "ssr": "yarn build && yarn serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
     "build:dir": "mkdir -p public/icons/",
     "build:favicons": "node scripts/favicons",
-    "build": "npm run build:dir && npm run build:favicons && gatsby build",
+    "build": "yarn build:dir && yarn build:favicons && gatsby build",
     "test": "ava **/*.test.js --verbose"
   },
   "dependencies": {
