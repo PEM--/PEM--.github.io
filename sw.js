@@ -11,7 +11,8 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
+importScripts("workbox-v3.4.1/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "workbox-v3.4.1"});
 
 workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline"});
 
@@ -25,34 +26,34 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-fe835145cb422b3de7f7.js"
+    "url": "webpack-runtime-891865cd27deedca397e.js"
   },
   {
-    "url": "app-213d336c94dad6da5bbc.js"
+    "url": "app-c6f5aebcbff25b715037.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-aa9ede116c441f968dc5.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-93a4ec6fd559fdc6b3d3.js"
   },
   {
     "url": "index.html",
-    "revision": "22b5e07d74db49445adc8f87a5ff4825"
+    "revision": "20b83e388dbd8a97a342945cfd1bd84f"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7c509e271edb72c17a87aa71c05a4260"
+    "revision": "0ad567d65b364b023bac932891c486e9"
   },
   {
-    "url": "0-5df2b366118829645aec.js"
+    "url": "0-f11294ccbcd7df9dc56c.js"
   },
   {
-    "url": "component---src-pages-index-js-728a23e283b7a25e64fb.js"
+    "url": "component---src-pages-index-js-a68b436cd6039e21de6a.js"
   },
   {
     "url": "static/d/463/path---index-6a9-Fz1MZBQZqD6sxzmtTSLTmEiDDg.json",
     "revision": "873dddba044f2b09e42e8e51903ce9d1"
   },
   {
-    "url": "component---src-pages-404-js-6bf3cf22cc6e298d8fb2.js"
+    "url": "component---src-pages-404-js-9dbd81ad120fc7c633d6.js"
   },
   {
     "url": "static/d/164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E.json",
@@ -72,3 +73,24 @@ workbox.routing.registerNavigationRoute("/offline-plugin-app-shell-fallback/inde
 });
 
 workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https:/, workbox.strategies.networkFirst(), 'GET');
+"use strict";
+
+/* global workbox */
+self.addEventListener("message", function (event) {
+  var api = event.data.api;
+
+  if (api === "gatsby-runtime-cache") {
+    var resources = event.data.resources;
+    var cacheName = workbox.core.cacheNames.runtime;
+    event.waitUntil(caches.open(cacheName).then(function (cache) {
+      return Promise.all(resources.map(function (resource) {
+        return cache.add(resource).catch(function (e) {
+          // ignore TypeErrors - these are usually due to
+          // external resources which don't allow CORS
+          if (!(e instanceof TypeError)) throw e;
+        });
+      }));
+    }));
+  }
+});
