@@ -4,6 +4,7 @@
   "author": "Fabian Schultz <desk@fabianschultz.com>",
   "scripts": {
     "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
@@ -42,6 +43,7 @@
     "chrome-launcher": "^0.10.2",
     "directory-named-webpack-plugin": "4.0.0",
     "favicons": "^5.1.1",
+    "gh-pages": "^2.0.0",
     "lighthouse": "^3.0.3",
     "node-gyp": "^3.7.0",
     "prettier": "^1.13.5",
