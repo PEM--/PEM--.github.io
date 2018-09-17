@@ -5,6 +5,7 @@
   "description": "PEM's blog",
   "version": "1.0.0",
   "dependencies": {
+    "@reach/router": "^1.1.1",
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "next",
     "gatsby-link": "next",
@@ -20,12 +21,15 @@
     "typography-theme-lawton": "^0.15.10"
   },
   "keywords": [
-    "gatsby", "math", "machine learning", "blog"
+    "gatsby",
+    "math",
+    "machine learning",
+    "blog"
   ],
   "scripts": {
     "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public",
     "develop": "gatsby develop",
-    "deploy": "yarn clean && yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
+    "deploy": "yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
     "serve": "gatsby serve",
     "ssr": "yarn build && yarn serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
