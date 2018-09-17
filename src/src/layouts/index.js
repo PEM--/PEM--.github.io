@@ -21,15 +21,17 @@ const Header = styled.header`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 960px;
+  padding: .5em 0;
   >* {
     display: block;
     flex: 0 0 auto;
   }
+  h1 { margin: 0; }
 `
 
 const LinkList = styled.ul`
   list-style-type: none;
-  margin: auto;
+  margin: 0;
   white-space: nowrap;
   >li { margin: 0; }
 `
