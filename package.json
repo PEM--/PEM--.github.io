@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-universal",
+  "name": "PEM's blog",
   "license": "MIT",
-  "author": "Fabian Schultz <desk@fabianschultz.com>",
+  "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public",
