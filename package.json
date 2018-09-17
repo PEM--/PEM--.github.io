@@ -4,7 +4,7 @@
   "author": "Pierre-Eric Marchandet <pemarchandet@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -e public",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
