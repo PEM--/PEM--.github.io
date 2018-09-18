@@ -15,7 +15,6 @@ export default function BlogPost ({ data: { markdownRemark: post, site }, locati
   console.log('discussProps', discussProps)
   return (<Layout>
     <h1>{post.frontmatter.title}</h1>
-    <p><Disqus.CommentCount {...discussProps}>comments</Disqus.CommentCount></p>
     <div dangerouslySetInnerHTML={{ __html: post.html }} />
     <Disqus.DiscussionEmbed {...discussProps} />
   </Layout>)
