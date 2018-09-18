@@ -3,18 +3,21 @@ import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, Link, graphql } from  'gatsby'
 import { any } from 'prop-types'
+import { size } from 'polished'
 
+import GlobalStyle from '../themes/GlobalStyle'
 import Main from '../components/main'
 import theme from '../themes'
 
 const LayoutDiv = styled.div`
+  background: ${({ theme }) => theme.bgColor};
   margin: 1em auto;
-  width: 100vw;
+  ${size('100%', '100vw')}
   max-width: ${({ theme }) => theme.maxWidth}px;
 `
 
 const Nav = styled.nav`
-  background: aliceblue;
+  border-bottom: 1px solid ${({ theme }) => theme.lightGray};
 `
 
 const Header = styled.header`
@@ -68,6 +71,7 @@ const Layout = ({ children }) => (<ThemeProvider theme={theme}>
     <Main>
       <LayoutDiv>{children}</LayoutDiv>
     </Main>
+    <GlobalStyle />
   </Fragment>)}
   />
 </ThemeProvider>)

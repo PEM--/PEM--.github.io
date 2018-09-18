@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
 const Main = styled.main`
-  background: aliceblue;
+  background: ${({ theme }) => theme.bgColor};
 `
 export default Main
