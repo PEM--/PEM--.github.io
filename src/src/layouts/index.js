@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
-import { StaticQuery, Link, graphql } from  'gatsby'
+import { StaticQuery, graphql } from  'gatsby'
 import { any } from 'prop-types'
 import { size } from 'polished'
 
 import GlobalStyle from '../themes/GlobalStyle'
-import Main from '../components/main'
+import Main from '../components/Main'
+import Nav from '../components/Nav'
 import theme from '../themes'
 
 const LayoutDiv = styled.div`
@@ -14,31 +15,6 @@ const LayoutDiv = styled.div`
   margin: 1em auto;
   ${size('100%', '100vw')}
   max-width: ${({ theme }) => theme.maxWidth}px;
-`
-
-const Nav = styled.nav`
-  border-bottom: 1px solid ${({ theme }) => theme.lightGray};
-`
-
-const Header = styled.header`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: ${({ theme }) => theme.maxWidth}px;
-  padding: .5em 0;
-  >* {
-    display: block;
-    flex: 0 0 auto;
-  }
-  h1 { margin: 0; }
-`
-
-const LinkList = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  white-space: nowrap;
-  >li { margin: 0; }
 `
 
 const Layout = ({ children }) => (<ThemeProvider theme={theme}>
@@ -60,14 +36,7 @@ const Layout = ({ children }) => (<ThemeProvider theme={theme}>
           { name: 'keywords', content: 'sample, something' },
         ]}
       />
-      <Nav>
-        <Header>
-          <Link to='/'><h1>{title}</h1></Link>
-          <LinkList>
-            <li><Link to='/about'>About</Link></li>
-          </LinkList>
-        </Header>
-    </Nav>
+    <Nav title={title} />
     <Main>
       <LayoutDiv>{children}</LayoutDiv>
     </Main>

@@ -1,29 +1,18 @@
 import Typography from 'typography'
 import lawtonTheme from 'typography-theme-lawton'
 import omit from 'lodash/omit'
-import theme from '../themes'
+import theme from '.'
 
 // More info here:
 // https://github.com/KyleAMathews/typography.js/blob/master/packages/typography-theme-lawton/src/index.js
 const modifiedTheme = {
   ...omit(lawtonTheme, 'overrideStyles'),
-  headerFontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    'sans-serif',
-  ],
+  headerFontFamily: theme.headerFont.replace(/'/g, '').split(','),
   headerWeight: 500,
   headerColor: theme.headerColor,
   bodyColor: theme.bodyColor
 }
+console.log('modifiedTheme', modifiedTheme)
 const typography = new Typography(modifiedTheme)
 
 export default typography
