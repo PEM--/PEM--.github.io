@@ -57,7 +57,8 @@ module.exports = {
         },
       },
       'gatsby-remark-smartypants',
-      'gatsby-remark-emoji'
+      'gatsby-remark-emoji',
+      'gatsby-remark-component'
     ]
   }
 }
