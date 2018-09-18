@@ -36,7 +36,7 @@ const LinkList = styled.ul`
   >li { margin: 0; }
 `
 
-const Layout = ({ children }) => (<Fragment>
+const Layout = ({ children }) => (<html lang='en'>
   <StaticQuery
     query={graphql`
       query {
@@ -47,7 +47,7 @@ const Layout = ({ children }) => (<Fragment>
         }
       }
     `}
-    render={({ site: { siteMetadata: { title } } }) => (<Nav>
+    render={({ site: { siteMetadata: { title } } }) => (<Fragment>
       <Helmet
         title={title}
         meta={[
@@ -55,18 +55,20 @@ const Layout = ({ children }) => (<Fragment>
           { name: 'keywords', content: 'sample, something' },
         ]}
       />
-      <Header>
-        <Link to='/'><h1>{title}</h1></Link>
-        <LinkList>
-          <li><Link to='/about'>About</Link></li>
-        </LinkList>
-      </Header>
-  </Nav>)}
+      <Nav>
+        <Header>
+          <Link to='/'><h1>{title}</h1></Link>
+          <LinkList>
+            <li><Link to='/about'>About</Link></li>
+          </LinkList>
+        </Header>
+    </Nav>
+  </Fragment>)}
   />
   <Main>
     <LayoutDiv>{children}</LayoutDiv>
   </Main>
-</Fragment>)
+</html>)
 Layout.propTypes = {
   children: arrayOf(element).isRequired
 }
