@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, Link, graphql } from  'gatsby'
-import { arrayOf, element } from 'prop-types'
+import { any } from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Main from '../components/main'
 
 const LayoutDiv = styled.div`
   margin: 1em auto;
-  width: 960px;
+  width: 100vw;
+  max-width: 960px;
 `
 
 const Nav = styled.nav`
@@ -70,6 +71,6 @@ const Layout = ({ children }) => (
   />
 )
 Layout.propTypes = {
-  children: arrayOf(element).isRequired
+  children: any.isRequired
 }
 export default Layout
