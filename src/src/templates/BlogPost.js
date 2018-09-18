@@ -10,7 +10,7 @@ export default function BlogPost ({ data: { markdownRemark: post, site }, locati
       title: post.frontmatter.title,
       url: location.href
     },
-    shortname: site.siteMetadata.siteUrl
+    shortname: site.siteMetadata.discussShortName
   }
   console.log('discussProps', discussProps)
   return (<Layout>
@@ -25,7 +25,7 @@ export const query = graphql`
 query ($slug: String!) {
   site {
     siteMetadata {
-      siteUrl
+      discussShortName
     }
   }
   markdownRemark(fields: {slug: {eq: $slug}}) {

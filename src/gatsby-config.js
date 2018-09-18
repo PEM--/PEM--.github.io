@@ -7,6 +7,7 @@ const title = "PEM's blog"
 
 module.exports = {
   siteMetadata: {
+    discussShortName: 'https-pem-github-io-1',
     siteUrl: 'https://pem--.github.io/',
     title
   },
