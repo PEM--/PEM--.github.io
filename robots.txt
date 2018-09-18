@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://pem--.github.io/sitemap.xml
+Host: https://pem--.github.io
