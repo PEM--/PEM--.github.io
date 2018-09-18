@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import H1 from '../components/H1'
 import Layout from '../layouts'
 
 export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Layout>
-  <h1>List of posts ({totalCount})</h1>
-  <p>Some random thoughts and notes about dev, Math, ML & AI</p>
+  <H1>List of posts <small>{totalCount} posts</small></H1>
   <nav>
     <ul>
       {edges.map(({ node: { id, fields, frontmatter } }) => (<li key={id}>

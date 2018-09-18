@@ -23,17 +23,17 @@ const Layout = ({ children }) => (<ThemeProvider theme={theme}>
       query {
         site {
           siteMetadata {
+            description
             title
           }
         }
       }
     `}
-    render={({ site: { siteMetadata: { title } } }) => (<Fragment>
+    render={({ site: { siteMetadata: { description, title } } }) => (<Fragment>
       <Helmet
         title={title}
         meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
+          { name: 'description', content: description }
         ]}
       />
     <Nav title={title} />
