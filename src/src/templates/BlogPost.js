@@ -1,18 +1,23 @@
 import React from 'react'
-import { DiscussionEmbed } from 'disqus-react'
+import Disqus from 'disqus-react'
 import { graphql } from 'gatsby'
 import Layout from '../layouts'
 
 export default function BlogPost ({ data: { markdownRemark: post, site }, location, ...others }) {
-  const config = {
-    url: location.href,
-    identifier: post.id,
-    title: post.frontmatter.title
+  const discussProps = {
+    config: {
+      identifier: post.id,
+      title: post.frontmatter.title,
+      url: location.href
+    },
+    shortname: site.siteMetadata.title
   }
+  console.log('shortname')
   return (<Layout>
-    <h1>{post.frontmatter.title}</h1>  
+    <h1>{post.frontmatter.title}</h1>
+    <p><Disqus.CommentCount {...discussProps}>comments</Disqus.CommentCount></p>
     <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    <DiscussionEmbed shortname={site.siteMetadata.title} config={config} />
+    <Disqus.DiscussionEmbed {...discussProps} />
   </Layout>)
 }
 

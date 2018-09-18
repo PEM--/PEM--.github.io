@@ -23,7 +23,4 @@ Plenty other stuff...
 const lambda = () => 'Blabla'
 ```
 
-`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
-
-
 ![Le Louvre](./louvre.jpg)
