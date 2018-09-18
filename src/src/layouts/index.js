@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import Helmet from 'react-helmet'
+import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, Link, graphql } from  'gatsby'
 import { any } from 'prop-types'
-import Helmet from 'react-helmet'
 
 import Main from '../components/main'
+import theme from '../themes'
 
 const LayoutDiv = styled.div`
   margin: 1em auto;
   width: 100vw;
-  max-width: 960px;
+  max-width: ${({ theme }) => theme.maxWidth}px;
 `
 
 const Nav = styled.nav`
@@ -21,7 +22,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${({ theme }) => theme.maxWidth}px;
   padding: .5em 0;
   >* {
     display: block;
@@ -37,7 +38,7 @@ const LinkList = styled.ul`
   >li { margin: 0; }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children }) => (<ThemeProvider theme={theme}>
   <StaticQuery
     query={graphql`
       query {
@@ -69,7 +70,7 @@ const Layout = ({ children }) => (
     </Main>
   </Fragment>)}
   />
-)
+</ThemeProvider>)
 Layout.propTypes = {
   children: any.isRequired
 }
