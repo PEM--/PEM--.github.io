@@ -1,0 +1,1 @@
+{"data":{"markdownRemark":{"html":"<h2>Linear algeabra</h2>\n<p>Stuff about matrix</p>\n<h2>Linear algeabra</h2>\n<p>Stuff about gradient, derivatives and integrals</p>\n<h2>Others</h2>\n<p>Plenty other stuff</p>\n<pre><code class=\"language-js\">console.log('Blabla')\n</code></pre>","frontmatter":{"title":"Math Cheatsheet"}}},"pageContext":{"slug":"/blog/math-cheatsheet/"}}
