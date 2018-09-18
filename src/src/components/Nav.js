@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import { Link } from  'gatsby'
 import { position, size } from 'polished'
 
-import typography from '../themes/typography'
-
-console.log('typography', typography)
-
 const NavTag = styled.nav`
   border-bottom: 1px solid ${({ theme }) => theme.lightGray};
 `

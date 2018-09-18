@@ -7,6 +7,7 @@
   "dependencies": {
     "@reach/router": "^1.1.1",
     "babel-plugin-styled-components": "^1.7.1",
+    "disqus-react": "^1.0.5",
     "gatsby": "^2.0.1",
     "gatsby-link": "^2.0.1",
     "gatsby-plugin-catch-links": "^2.0.2",
