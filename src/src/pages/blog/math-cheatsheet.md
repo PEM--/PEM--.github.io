@@ -12,3 +12,7 @@ Stuff about gradient, derivatives and integrals
 
 ## Others
 Plenty other stuff
+
+```js
+console.log('Blabla')
+```
