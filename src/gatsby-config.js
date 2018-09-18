@@ -3,6 +3,7 @@ const manifest = require('./src/plugin-configs/manifest')
 const remark = require('./src/plugin-configs/remark')
 const robotsTxt = require('./src/plugin-configs/robotsTxt')
 const sitemap = require('./src/plugin-configs/sitemap')
+const styledComponents = require ('./src/plugin-configs/styledComponents')
 const typography = require('./src/plugin-configs/typography')
 
 const title = "PEM's blog"
