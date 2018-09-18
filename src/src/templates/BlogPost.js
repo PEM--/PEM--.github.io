@@ -12,6 +12,7 @@ export default function BlogPost ({ data: { markdownRemark: post, site }, locati
     },
     shortname: site.siteMetadata.siteUrl
   }
+  console.log('discussProps', discussProps)
   return (<Layout>
     <h1>{post.frontmatter.title}</h1>
     <p><Disqus.CommentCount {...discussProps}>comments</Disqus.CommentCount></p>
