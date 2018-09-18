@@ -18,7 +18,7 @@ a^2 + b^2 = c^2
 $$
 
 ## Others
-Plenty other stuff
+Plenty other stuff...
 
 ```js
 const lambda = () => 'Blabla'

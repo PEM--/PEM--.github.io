@@ -42,7 +42,8 @@ module.exports = {
           // base for generating different widths of each image.
           maxWidth: 960,
         },
-      }
+      },
+      'gatsby-remark-smartypants'
     ]
   }
 }
