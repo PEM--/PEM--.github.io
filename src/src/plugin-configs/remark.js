@@ -4,6 +4,16 @@ module.exports = {
     plugins: [
       'gatsby-remark-katex',
       {
+        resolve: 'gatsby-remark-embed-video',
+        options: {
+          width: 800,
+          ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+          height: 400, // Optional: Overrides optional.ratio
+          related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+          noIframeBorder: true //Optional: Disable insertion of <style> border: 0
+        }
+      },
+      {
         resolve: 'gatsby-remark-prismjs',
         options: {
           // Class prefix for <pre> tags containing syntax highlighting;
@@ -13,7 +23,7 @@ module.exports = {
           // you may use this to prevent Prism from re-processing syntax.
           // This is an uncommon use-case though;
           // If you're unsure, it's best to use the default value.
-          classPrefix: "language-",
+          classPrefix: 'language-',
           // This is used to allow setting a language for inline code
           // (i.e. single backticks) by creating a separator.
           // This separator is a string and will do no white-space

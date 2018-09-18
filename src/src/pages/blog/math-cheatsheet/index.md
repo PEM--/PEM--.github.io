@@ -1,5 +1,4 @@
 ---
-path: "blog/math-cheatsheet"
 title: "Math Cheatsheet"
 date: "2018-09-17"
 ---
@@ -23,3 +22,6 @@ Plenty other stuff...
 ```js
 const lambda = () => 'Blabla'
 ```
+
+`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
+
