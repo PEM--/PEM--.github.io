@@ -10,9 +10,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     filesystem,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     remark,
     typography,
     manifest(title),
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-offline'
   ],
 }
