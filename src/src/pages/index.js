@@ -1,6 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-
+import { Link, graphql } from 'gatsby'
 import Layout from '../layouts'
 
 export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Layout>
@@ -8,8 +7,8 @@ export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Lay
   <p>Some random thoughts and notes about dev, Math, ML & AI</p>
   <nav>
     <ul>
-      {edges.map(({ node: { id, frontmatter } }) => (<li key={id}>
-        <p>{frontmatter.title} - {frontmatter.date}</p>
+      {edges.map(({ node: { id, fields, frontmatter } }) => (<li key={id}>
+        <Link to={fields.slug}><p>{frontmatter.title} - {frontmatter.date}</p></Link>
       </li>))}
     </ul>
   </nav>
@@ -23,9 +22,12 @@ query site {
     edges {
       node {
         id
+        fields {
+          slug
+        }
         frontmatter {
-          title
           date(formatString: "MM/DD/YY")
+          title
         }
       }
     }

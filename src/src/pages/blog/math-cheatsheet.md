@@ -1,4 +1,5 @@
 ---
+path: "blog/math-cheatsheet"
 title: "Math Cheatsheet"
 date: "2018-09-17"
 ---
