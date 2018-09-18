@@ -15,3 +15,7 @@ Display mode:
 $$
 a^2 + b^2 = c^2
 $$
+
+## Complementary videos
+### Calculus
+`youtube: WUvTyaaNkzM`
