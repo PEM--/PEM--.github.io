@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../layouts'
 
 export default () => (<Layout>
-  <h1>NOT FOUND</h1>
-  <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  <h1>404 - Not found</h1>
+  <p>This route doesn't exist <span role='img' aria-label='Puzzled'>🤔</span></p>
+  <p><Link to='/'>Go back home</Link></p>
 </Layout>)

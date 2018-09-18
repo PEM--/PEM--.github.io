@@ -12,7 +12,6 @@ const modifiedTheme = {
   headerColor: theme.headerColor,
   bodyColor: theme.bodyColor
 }
-console.log('modifiedTheme', modifiedTheme)
 const typography = new Typography(modifiedTheme)
 
 export default typography
