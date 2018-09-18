@@ -10,9 +10,16 @@ Stuff about matrix
 ## Linear algeabra
 Stuff about gradient, derivatives and integrals
 
+Inline: $a^2 + b^2 = c^2$
+
+Display mode:
+$$
+a^2 + b^2 = c^2
+$$
+
 ## Others
 Plenty other stuff
 
 ```js
-console.log('Blabla')
+const lambda = () => 'Blabla'
 ```
