@@ -36,7 +36,7 @@ const LinkList = styled.ul`
   >li { margin: 0; }
 `
 
-const Layout = ({ children }) => (<html lang='en'>
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -63,12 +63,12 @@ const Layout = ({ children }) => (<html lang='en'>
           </LinkList>
         </Header>
     </Nav>
+    <Main>
+      <LayoutDiv>{children}</LayoutDiv>
+    </Main>
   </Fragment>)}
   />
-  <Main>
-    <LayoutDiv>{children}</LayoutDiv>
-  </Main>
-</html>)
+)
 Layout.propTypes = {
   children: arrayOf(element).isRequired
 }
