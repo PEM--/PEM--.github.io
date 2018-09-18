@@ -1,20 +1,34 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 
 import Layout from '../layouts'
 
-export default ({ data }) => (<Layout>
-  <h1>List of posts ({data.allMarkdownRemark.totalCount})</h1>
+export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Layout>
+  <h1>List of posts ({totalCount})</h1>
   <p>Some random thoughts and notes about dev, Math, ML & AI</p>
-  <Link to='/about'>About</Link>
+  <nav>
+    <ul>
+      {edges.map(({ node: { id, frontmatter } }) => (<li key={id}>
+        <p>{frontmatter.title} - {frontmatter.date}</p>
+      </li>))}
+    </ul>
+  </nav>
 </Layout>)
 
 
 export const query = graphql`
-  query site {
-  	allMarkdownRemark {
-    	totalCount
-  	}    
+query site {
+  allMarkdownRemark {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "MM/DD/YY")
+        }
+      }
+    }
   }
+}
 `
