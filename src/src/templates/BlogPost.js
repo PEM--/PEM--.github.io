@@ -14,8 +14,6 @@ export default function BlogPost ({ data: { markdownRemark: post, site }, locati
     },
     shortname: site.siteMetadata.discussShortName
   }
-  console.log('post', post)
-  console.log('site', site)
   return (<Layout>
     <Helmet
       title={`${site.siteMetadata.title}: ${post.frontmatter.title}`}
