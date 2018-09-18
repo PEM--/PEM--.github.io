@@ -6,7 +6,10 @@ const typography = require('./src/plugin-configs/typography')
 const title = "PEM's blog"
 
 module.exports = {
-  siteMetadata: { title },
+  siteMetadata: {
+    siteUrl: 'https://pem--.github.io/',
+    title
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     filesystem,
