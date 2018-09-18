@@ -9,6 +9,7 @@
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "^2.0.0",
     "gatsby-link": "^2.0.1",
+    "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-plugin-typography": "^2.2.0",
@@ -29,11 +30,12 @@
     "blog"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn prebuild && gatsby build",
     "clean": "find .. -maxdepth 1 ! -name src ! -name README.md ! -name . ! -name .. ! -name .git ! -name .gitignore -exec rm -rf {} \\; && rm -rf public && rm -rf .cache",
-    "develop": "gatsby develop",
+    "develop": "yarn prebuild && gatsby develop",
     "deploy": "yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
+    "prebuild": "mkdir -p public/src && cp -rf src/favicons public/src/",
     "prune": "yarn clean && rm -rf node_modules",
     "serve": "gatsby serve",
     "ssr": "yarn build && yarn serve"
