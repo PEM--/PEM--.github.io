@@ -53,7 +53,8 @@ module.exports = {
           maxWidth: 960,
         },
       },
-      'gatsby-remark-smartypants'
+      'gatsby-remark-smartypants',
+      'gatsby-remark-emoji'
     ]
   }
 }
