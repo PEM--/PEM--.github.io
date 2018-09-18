@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import ExternalLink from '../components/ExternalLink'
-import Layout from '../layouts'
+import Layout from '../components/Layout'
 
 const LiLink = props => <li><ExternalLink {...props} /></li>
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+
 import H1 from '../components/H1'
-import Layout from '../layouts'
+import Layout from '../components/Layout'
 
 export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Layout>
   <H1>List of posts <small>{totalCount} posts</small></H1>

@@ -2,7 +2,7 @@ import Emoji from 'react-emoji-render'
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../layouts'
+import Layout from '../components/Layout'
 
 export default () => (<Layout>
   <h1>404 - Not found</h1>

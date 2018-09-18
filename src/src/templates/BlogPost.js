@@ -1,7 +1,8 @@
 import React from 'react'
 import Disqus from 'disqus-react'
 import { graphql } from 'gatsby'
-import Layout from '../layouts'
+
+import Layout from '../components/Layout'
 
 export default function BlogPost ({ data: { markdownRemark: post, site }, location, ...others }) {
   const discussProps = {
