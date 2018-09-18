@@ -1,6 +1,7 @@
 const filesystem = require('./src/plugin-configs/filesystem')
 const manifest = require('./src/plugin-configs/manifest')
 const remark = require('./src/plugin-configs/remark')
+const robotsTxt = require('./src/plugin-configs/robotsTxt')
 const sitemap = require('./src/plugin-configs/sitemap')
 const typography = require('./src/plugin-configs/typography')
 
@@ -23,6 +24,7 @@ module.exports = {
     manifest(title),
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
-    sitemap
+    sitemap,
+    robotsTxt
   ],
 }
