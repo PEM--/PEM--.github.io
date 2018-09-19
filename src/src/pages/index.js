@@ -13,6 +13,7 @@ export default function Index ({ data: { allMdx: { edges } } }) {
     .filter(({ node }) => node.frontmatter.type === 'blog')
     .map(({ node }) => ({ ...node.frontmatter, id: node.id }))
     .sort(({ date: a }, { date: b }) => defaultSort(a, b))
+    .reverse()
   return (<Layout>
     {() => (<Fragment>
       <H1>List of posts <small>{nodes.length} posts</small></H1>

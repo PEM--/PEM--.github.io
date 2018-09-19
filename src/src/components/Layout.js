@@ -15,6 +15,7 @@ const LayoutDiv = styled.div`
   margin: 1em auto;
   ${size('100%', '100vw')}
   max-width: ${({ theme }) => theme.maxWidth}px;
+  position: relative;
 `
 
 export default function Layout ({ children, title, description }) {
