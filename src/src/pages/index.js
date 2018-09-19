@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import dateFns from 'date-fns'
 import naturalSort from 'natural-sort'
 import { Link, graphql } from 'gatsby'
@@ -14,14 +14,16 @@ export default function Index ({ data: { allMdx: { edges } } }) {
     .map(({ node }) => ({ ...node.frontmatter, id: node.id }))
     .sort(({ date: a }, { date: b }) => defaultSort(a, b))
   return (<Layout>
-    <H1>List of posts <small>{nodes.length} posts</small></H1>
-    <nav>
-      <ul>
-        {nodes.map(({ date, description, id, slug, title }) => (<li key={id}>
-          <Link to={slug}><p>{title} - {dateFns.format(date, 'DD/MM/YY')}</p></Link>
-        </li>))}
-      </ul>
-    </nav>
+    {() => (<Fragment>
+      <H1>List of posts <small>{nodes.length} posts</small></H1>
+      <nav>
+        <ul>
+          {nodes.map(({ date, description, id, slug, title }) => (<li key={id}>
+            <Link to={`blog/${slug}`}><p>{title} - {dateFns.format(date, 'DD/MM/YY')}</p></Link>
+          </li>))}
+        </ul>
+      </nav>
+    </Fragment>)}
   </Layout>)
 }
 

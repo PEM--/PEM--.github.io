@@ -25,6 +25,7 @@ export default function Layout ({ children, title, description }) {
           site {
             siteMetadata {
               description
+              discussShortName
               title
             }
           }
@@ -39,7 +40,7 @@ export default function Layout ({ children, title, description }) {
         />
       <Nav title={siteMetadata.title} />
       <Main>
-        <LayoutDiv>{children}</LayoutDiv>
+        <LayoutDiv>{children({ siteMetadata })}</LayoutDiv>
       </Main>
       <GlobalStyle />
     </Fragment>)}

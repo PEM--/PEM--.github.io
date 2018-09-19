@@ -14,7 +14,7 @@ module.exports = {
         options: {
           maxWidth: theme.maxWidth,
           linkImagesToOriginal: false,
-          withWebp: { quality: 80 },
+          withWebp: { quality: 50 },
         },
       },
       {

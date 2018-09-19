@@ -1,7 +1,6 @@
 const filesystems = require('./src/plugin-configs/filesystems')
 const manifest = require('./src/plugin-configs/manifest')
 const mdx = require('./src/plugin-configs/mdx')
-const remark = require('./src/plugin-configs/remark')
 const robotsTxt = require('./src/plugin-configs/robotsTxt')
 const sitemap = require('./src/plugin-configs/sitemap')
 const styledComponents = require ('./src/plugin-configs/styledComponents')
@@ -23,10 +22,8 @@ module.exports = {
     styledComponents,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    remark,
     mdx,
     manifest(title),
-    'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     sitemap,
     robotsTxt
