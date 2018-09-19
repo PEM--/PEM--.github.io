@@ -3,10 +3,6 @@ const theme = require.resolve('../themes/index.js')
 module.exports = {
   resolve: 'gatsby-mdx',
   options: {
-    defaultLayouts: {
-      default: require.resolve('../templates/MdxBlogPost.js')
-    },
-    extensions: ['.mdx'],
     gatsbyRemarkPlugins: [
       { resolve: 'gatsby-remark-smartypants' },
       {
@@ -26,6 +22,10 @@ module.exports = {
           showLineNumbers: false
         }
       }
-    ]
+    ],
+    defaultLayouts: {
+      default: require.resolve('../templates/MdxBlogPost.js')
+    },
+    extensions: ['.mdx']
   }
 }
