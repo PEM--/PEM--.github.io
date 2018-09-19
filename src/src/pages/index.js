@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import naturalSort from 'natural-sort'
 import { graphql } from 'gatsby'
 
-import H1 from '../components/H1'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 import ShareIconBar from '../components/ShareIconBar'
@@ -17,7 +16,6 @@ export default function Index ({ data: { allMdx: { edges } } }) {
     .reverse()
   return (<Layout>
     {({ siteMetadata }) => (<Fragment>
-      <H1>List of posts <small>{nodes.length} posts</small></H1>
       <PostList posts={nodes} />
       <ShareIconBar href={siteMetadata.siteUrl} title={siteMetadata.title} />
     </Fragment>)}
