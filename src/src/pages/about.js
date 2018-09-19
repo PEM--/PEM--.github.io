@@ -8,7 +8,7 @@ import ShareIconBar from '../components/ShareIconBar'
 const LiLink = props => <li><ExternalLink {...props} /></li>
 
 export default () => (<Layout>
-  {({ siteMetadata }) => console.log('siteMetadata', siteMetadata) || (<Fragment>
+  {({ siteMetadata }) => (<Fragment>
     <h1>About this blog</h1>
     <p>This blog has been created with:</p>
     <ul>
