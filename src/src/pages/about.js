@@ -3,11 +3,12 @@ import React, { Fragment } from 'react'
 
 import ExternalLink from '../components/ExternalLink'
 import Layout from '../components/Layout'
+import ShareIconBar from '../components/ShareIconBar'
 
 const LiLink = props => <li><ExternalLink {...props} /></li>
 
 export default () => (<Layout>
-  {() => (<Fragment>
+  {({ siteMetadata }) => console.log('siteMetadata', siteMetadata) || (<Fragment>
     <h1>About this blog</h1>
     <p>This blog has been created with:</p>
     <ul>
@@ -22,5 +23,6 @@ export default () => (<Layout>
     <p>You can find me on my
       &nbsp;<ExternalLink href='https://www.linkedin.com/in/pemarchandet/' text="LinkedIn's profile" />&nbsp;
       or on <ExternalLink href='https://twitter.com/PEM___' text='Twitter' />.</p>
+    <ShareIconBar href={siteMetadata.siteUrl} title={siteMetadata.title} />
   </Fragment>)}
 </Layout>)

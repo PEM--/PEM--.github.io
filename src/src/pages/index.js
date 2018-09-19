@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 
 import H1 from '../components/H1'
 import Layout from '../components/Layout'
+import ShareIconBar from '../components/ShareIconBar'
 
 const defaultSort = naturalSort()
 
@@ -15,7 +16,7 @@ export default function Index ({ data: { allMdx: { edges } } }) {
     .sort(({ date: a }, { date: b }) => defaultSort(a, b))
     .reverse()
   return (<Layout>
-    {() => (<Fragment>
+    {({ siteMetadata }) => (<Fragment>
       <H1>List of posts <small>{nodes.length} posts</small></H1>
       <nav>
         <ul>
@@ -24,6 +25,7 @@ export default function Index ({ data: { allMdx: { edges } } }) {
           </li>))}
         </ul>
       </nav>
+      <ShareIconBar href={siteMetadata.siteUrl} title={siteMetadata.title} />
     </Fragment>)}
   </Layout>)
 }

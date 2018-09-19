@@ -27,6 +27,7 @@ export default function Layout ({ children, title, description }) {
             siteMetadata {
               description
               discussShortName
+              siteUrl
               title
             }
           }
