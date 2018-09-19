@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import dateFns from 'date-fns'
 import naturalSort from 'natural-sort'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import H1 from '../components/H1'
 import Layout from '../components/Layout'
+import PostList from '../components/PostList'
 import ShareIconBar from '../components/ShareIconBar'
 
 const defaultSort = naturalSort()
@@ -18,13 +18,7 @@ export default function Index ({ data: { allMdx: { edges } } }) {
   return (<Layout>
     {({ siteMetadata }) => (<Fragment>
       <H1>List of posts <small>{nodes.length} posts</small></H1>
-      <nav>
-        <ul>
-          {nodes.map(({ date, description, id, slug, title }) => (<li key={id}>
-            <Link to={`blog/${slug}`}><p>{title} - {dateFns.format(date, 'DD/MM/YY')}</p></Link>
-          </li>))}
-        </ul>
-      </nav>
+      <PostList posts={nodes} />
       <ShareIconBar href={siteMetadata.siteUrl} title={siteMetadata.title} />
     </Fragment>)}
   </Layout>)
