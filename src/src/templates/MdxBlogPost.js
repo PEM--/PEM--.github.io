@@ -5,17 +5,15 @@ import H1 from '../components/H1'
 import Layout from '../components/Layout'
 import ExternalLink from '../components/ExternalLink'
 
-export default function MdxBlogPost (props) {
-  console.log('props', props)
-  return (<Layout>
+export default function MdxBlogPost ({ children, pageContext: { frontmatter } }) {
+  return (<Layout {...frontmatter}>
+    <H1>{frontmatter.title}</H1>
     <MDXProvider
       components={{
-        h1: H1,
-        a: ({ href, children }) => <ExternalLink href={href} text={children} />,
-        img: props => console.log('props', props) || <img {...props} />
+        a: ({ href, children }) => <ExternalLink href={href} text={children} />
       }}
     >
-      {props.children}
+      {children}
     </MDXProvider>
   </Layout>)
 }

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from  'gatsby'
-import { any } from 'prop-types'
+import { any, string } from 'prop-types'
 import { size } from 'polished'
 
 import GlobalStyle from '../themes/GlobalStyle'
@@ -17,7 +17,7 @@ const LayoutDiv = styled.div`
   max-width: ${({ theme }) => theme.maxWidth}px;
 `
 
-export default function Layout ({ children }) {
+export default function Layout ({ children, title, description }) {
   return (<ThemeProvider theme={theme}>
     <StaticQuery
       query={graphql`
@@ -30,14 +30,14 @@ export default function Layout ({ children }) {
           }
         }
       `}
-      render={({ site: { siteMetadata: { description, title } } }) => (<Fragment>
+      render={({ site: { siteMetadata } }) => (<Fragment>
         <Helmet
-          title={title}
+          title={title ? `${siteMetadata.title}: ${title}`: siteMetadata.title}
           meta={[
-            { name: 'description', content: description }
+            { name: 'description', content: description || siteMetadata.description }
           ]}
         />
-      <Nav title={title} />
+      <Nav title={siteMetadata.title} />
       <Main>
         <LayoutDiv>{children}</LayoutDiv>
       </Main>
@@ -47,5 +47,7 @@ export default function Layout ({ children }) {
   </ThemeProvider>)
 }
 Layout.propTypes = {
-  children: any.isRequired
+  children: any.isRequired,
+  description: string,
+  title: string
 }

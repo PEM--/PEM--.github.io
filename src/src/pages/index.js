@@ -1,37 +1,44 @@
 import React from 'react'
+import dateFns from 'date-fns'
+import naturalSort from 'natural-sort'
 import { Link, graphql } from 'gatsby'
 
 import H1 from '../components/H1'
 import Layout from '../components/Layout'
 
-export default ({ data: { allMarkdownRemark: { edges, totalCount } } }) => (<Layout>
-  <H1>List of posts <small>{totalCount} posts</small></H1>
-  <nav>
-    <ul>
-      {edges.map(({ node: { id, fields, frontmatter } }) => (<li key={id}>
-        <Link to={fields.slug}><p>{frontmatter.title} - {frontmatter.date}</p></Link>
-      </li>))}
-    </ul>
-  </nav>
-</Layout>)
+const defaultSort = naturalSort()
 
+export default function Index ({ data: { allMdx: { edges } } }) {
+  const nodes = edges
+    .filter(({ node }) => node.frontmatter.type === 'blog')
+    .map(({ node }) => ({ ...node.frontmatter, id: node.id }))
+    .sort(({ date: a }, { date: b }) => defaultSort(a, b))
+  return (<Layout>
+    <H1>List of posts <small>{nodes.length} posts</small></H1>
+    <nav>
+      <ul>
+        {nodes.map(({ date, description, id, slug, title }) => (<li key={id}>
+          <Link to={slug}><p>{title} - {dateFns.format(date, 'DD/MM/YY')}</p></Link>
+        </li>))}
+      </ul>
+    </nav>
+  </Layout>)
+}
 
 export const query = graphql`
 query site {
-  allMarkdownRemark {
-    totalCount
+  allMdx {
     edges {
       node {
-        id
-        fields {
-          slug
-        }
         frontmatter {
-          date(formatString: "MM/DD/YY")
+          date
+          description
+          slug
           title
+          type
         }
+        id
       }
     }
   }
-}
-`
+}`
