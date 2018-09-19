@@ -17,34 +17,35 @@ const LayoutDiv = styled.div`
   max-width: ${({ theme }) => theme.maxWidth}px;
 `
 
-const Layout = ({ children }) => (<ThemeProvider theme={theme}>
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            description
-            title
+export default function Layout ({ children }) {
+  return (<ThemeProvider theme={theme}>
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              description
+              title
+            }
           }
         }
-      }
-    `}
-    render={({ site: { siteMetadata: { description, title } } }) => (<Fragment>
-      <Helmet
-        title={title}
-        meta={[
-          { name: 'description', content: description }
-        ]}
-      />
-    <Nav title={title} />
-    <Main>
-      <LayoutDiv>{children}</LayoutDiv>
-    </Main>
-    <GlobalStyle />
-  </Fragment>)}
-  />
-</ThemeProvider>)
+      `}
+      render={({ site: { siteMetadata: { description, title } } }) => (<Fragment>
+        <Helmet
+          title={title}
+          meta={[
+            { name: 'description', content: description }
+          ]}
+        />
+      <Nav title={title} />
+      <Main>
+        <LayoutDiv>{children}</LayoutDiv>
+      </Main>
+      <GlobalStyle />
+    </Fragment>)}
+    />
+  </ThemeProvider>)
+}
 Layout.propTypes = {
   children: any.isRequired
 }
-export default Layout

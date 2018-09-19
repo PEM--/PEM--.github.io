@@ -1,3 +1,4 @@
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -27,8 +28,34 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allMdx {
+          edges {
+            node {
+              id
+              tableOfContents
+              parent {
+                ... on File {
+                  absolutePath
+                  name
+                  sourceInstanceName
+                }
+              }
+              code {
+                body
+                raw
+                scope
+              }
+              frontmatter {
+                title
+                description
+                date
+              }
+            }
+          }
+        }
       }
     `).then(result => {
+      if (result.errors) reject(result.errors)
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
@@ -40,6 +67,22 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+      // result.data.allMdx.edges.forEach(({ node }) => {
+      //   createPage({
+      //     path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+      //     component: componentWithMDXScope(
+      //       path.resolve('./src/templates/MdxBlogPost.js'),
+      //       node.code.scope,
+      //       __dirname
+      //     ),
+      //     context: {
+      //       absPath: node.parent.absolutePath,
+      //       tableOfContents: node.tableOfContents,
+      //       id: node.id,
+      //       ...node.code
+      //     }
+      //   })
+      // })
       resolve()
     })
   })

@@ -1,5 +1,6 @@
-const filesystem = require('./src/plugin-configs/filesystem')
+const filesystems = require('./src/plugin-configs/filesystems')
 const manifest = require('./src/plugin-configs/manifest')
+const mdx = require('./src/plugin-configs/mdx')
 const remark = require('./src/plugin-configs/remark')
 const robotsTxt = require('./src/plugin-configs/robotsTxt')
 const sitemap = require('./src/plugin-configs/sitemap')
@@ -17,12 +18,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    filesystem,
+    ...filesystems,
     typography,
     styledComponents,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     remark,
+    mdx,
     manifest(title),
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',

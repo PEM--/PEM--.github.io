@@ -11,8 +11,6 @@ Stuff about gradient, derivatives and integrals
 
 Inline: $a^2 + b^2 = c^2$
 
-<my-component></my-component>
-
 Display mode:
 $$
 a^2 + b^2 = c^2

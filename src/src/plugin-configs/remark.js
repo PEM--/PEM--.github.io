@@ -1,3 +1,5 @@
+const theme = require.resolve('../themes/index.js')
+
 module.exports = {
   resolve: `gatsby-transformer-remark`,
   options: {
@@ -49,7 +51,7 @@ module.exports = {
           // It's important to specify the maxWidth (in pixels) of
           // the content container as this plugin uses this as the
           // base for generating different widths of each image.
-          maxWidth: 960,
+          maxWidth: theme.maxWidth,
           linkImagesToOriginal: false,
           showCaptions: true,
           withWebp: { quality: 80 },
@@ -57,8 +59,7 @@ module.exports = {
         },
       },
       'gatsby-remark-smartypants',
-      'gatsby-remark-emoji',
-      'gatsby-remark-component'
+      'gatsby-remark-emoji'
     ]
   }
 }
