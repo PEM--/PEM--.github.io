@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import { Link } from  'gatsby'
 import { position, size } from 'polished'
 
-const NavTag = styled.nav`
-  border-bottom: 1px solid ${({ theme }) => theme.lightGray};
-`
-
 const Header = styled.header`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth}px;
@@ -21,7 +17,7 @@ const LinkList = styled.ul`
   position: relative;
   white-space: nowrap;
   width: 100%;
-  &::before {
+  &::before, &::after {
     content: '';
     display: block;
     background: linear-gradient(
@@ -30,18 +26,23 @@ const LinkList = styled.ul`
       ${({ theme }) => theme.lightGray},
       transparent
     );
-    ${position('absolute', 0, null, null, null)}
+    position: absolute;
     ${size('1px', '100%')}
   }
-  >li, a {
+  &::before { top: 0; }
+  &::after { bottom: 0; }
+  >li {
+    display: inline-block;
+    margin: 0;
+    padding: 1em 0;
+    &:not(:first-child) { margin-left: 1em; }
+  }
+  a {
     color: ${({ theme }) => theme.gray};
     font-family: ${({ theme }) => theme.headerFont};
     font-size: 14px;
-    margin: 0;
-    padding: 1em 0;
     text-transform: uppercase;
     transition: color ${({ theme }) => theme.defaultTransition};
-    &:not(:first-child) { margin-left: 1em; }
     &:hover, &:active {
       color: ${({ theme }) => theme.headerColor};
     }
@@ -64,7 +65,7 @@ const HomeLink = styled(Link)`
       border-radius: 50%;
       display: block;
       background: ${({ theme }) => theme.secondaryColor};
-      ${position('absolute', '10px', '-1em', null, null)}
+      ${position('absolute', '8px', '-1em', null, null)}
       ${size('10px')}
     }
     &:hover, &:active {
@@ -74,12 +75,13 @@ const HomeLink = styled(Link)`
 `
 
 export default function Nav ({ title }) {
-  return (<NavTag>
+  return (<nav>
     <Header>
       <HomeLink to='/'><h1>{title}</h1></HomeLink>
       <LinkList>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
       </LinkList>
     </Header>
-  </NavTag>)
+  </nav>)
 }
