@@ -34,12 +34,15 @@ export default function Layout ({ children, title, description }) {
         }
       `}
       render={({ site: { siteMetadata } }) => (<Fragment>
-        <Helmet
-          title={title ? `${siteMetadata.title}: ${title}`: siteMetadata.title}
-          meta={[
-            { name: 'description', content: description || siteMetadata.description }
-          ]}
-        />
+        <Helmet>
+          <html lang='en' amp />
+          <title>{title ? `${siteMetadata.title}: ${title}`: siteMetadata.title}</title>
+          <meta name='description' content={description || siteMetadata.description} />
+          <meta property='og:title' content={title} />
+          <meta property='og:description' content={description || siteMetadata.description} />
+          <meta name='twitter:card' content='summary' />
+          <meta name='twitter:creator' content='PEM___' />
+        </Helmet>
       <Nav title={siteMetadata.title} />
       <Main>
         <LayoutDiv>{children({ siteMetadata })}</LayoutDiv>
