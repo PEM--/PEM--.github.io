@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from  'gatsby'
 import { position, size } from 'polished'
+import { string } from 'prop-types'
 
 const Header = styled.header`
   margin: 0 auto;
@@ -74,14 +75,20 @@ const HomeLink = styled(Link)`
   }
 `
 
-export default function Nav ({ title }) {
-  return (<nav>
-    <Header>
-      <HomeLink to='/'><h1>{title}</h1></HomeLink>
-      <LinkList>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-      </LinkList>
-    </Header>
-  </nav>)
+export default class Nav extends Component {
+  static propTypes = {
+    title: string.isRequired
+  }
+  shouldComponentUpdate = () => false
+  render () {
+    return (<nav>
+      <Header>
+        <HomeLink to='/'><h1>{this.props.title}</h1></HomeLink>
+        <LinkList>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/about'>About</Link></li>
+        </LinkList>
+      </Header>
+    </nav>)
+  }
 }

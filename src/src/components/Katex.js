@@ -6,6 +6,7 @@ export default class Katex extends Component {
     super(props)
     this.content = katex.renderToString(props.text)
   }
+  shouldComponentUpdate = () => false
   render () {
     return <span dangerouslySetInnerHTML={{ __html: this.content }} />
   }
