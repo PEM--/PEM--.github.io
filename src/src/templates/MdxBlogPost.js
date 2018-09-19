@@ -14,7 +14,7 @@ export default function MdxBlogPost (props) {
     url: href
   }
   return (<Layout {...frontmatter}>
-    {({ siteMetadata }) => console.log('siteMetadata', siteMetadata) || (<Fragment>
+    {({ siteMetadata }) => (<Fragment>
       <H1>{frontmatter.title}</H1>
       <MDXProvider
         components={{
