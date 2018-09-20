@@ -7,7 +7,7 @@ import ExternalLink from './ExternalLink'
 
 const ContributeContainer = styled.span`
   display: block;
-  ${position('absolute', 0, 0, null, null)}
+  ${position('absolute', '-.5em', 0, null, null)}
   font-size: .8em;
 `
 

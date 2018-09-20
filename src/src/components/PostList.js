@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import dateFns from 'date-fns'
+import format from 'date-fns/format'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { arrayOf, shape, string } from 'prop-types'
@@ -62,7 +62,7 @@ class Post extends Component {
     const { date, description, slug, title } = this.props
     return (<PostContainer>
       <Link to={`blog/${slug}`}>
-        <p className='title'>{title}<small>{dateFns.format(date, 'DD/MM/YY')}</small></p>
+        <p className='title'>{title}<small>{format(date, 'DD/MM/YY')}</small></p>
         <p className='description'>{description}</p>
         <p className='continue'>Continue reading ⤅</p>
       </Link>

@@ -1,5 +1,6 @@
 import Disqus from 'disqus-react'
 import React, { Fragment, PureComponent } from 'react'
+import format from 'date-fns/format'
 
 import Contribute from '../components/Contribute'
 import H1 from '../components/H1'
@@ -17,7 +18,7 @@ export default class BlogTemplate extends PureComponent {
     }
     return (<Layout {...frontmatter}>
       {({ siteMetadata }) => (<Fragment>
-        <H1>{frontmatter.title}</H1>
+        <H1>{frontmatter.title}<small>{format(frontmatter.date, 'DD/MM/YY')}</small></H1>
         {frontmatter.contribute && <Contribute slug={frontmatter.slug} />}
         <MdxRenderer>{children}</MdxRenderer>
         <ShareIconBar href={href} title={frontmatter.title} />
