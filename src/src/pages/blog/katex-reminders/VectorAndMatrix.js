@@ -9,22 +9,22 @@ export default function () {
       \vec{v} = A \cdot \vec{x} = 
       % Matrix
       \begin{bmatrix}
-        a_{1,1} & … & z_{m,1} \\
-        ⁝       & … & ⁝ \\
-        a_{1,n} & … & z_{m,n}
+        a_{1,1} & \dots & z_{m,1} \\
+        \vdots  & \ddots & \vdots \\
+        a_{1,n} & \dots & z_{m,n}
       \end{bmatrix}
       \cdot
       % Vector
       \begin{bmatrix}
         x_n \\
-        ⁝ \\
+        \vdots \\
         x_n
       \end{bmatrix}
       =
       % Result vector
       \begin{bmatrix}
         v_m \\
-        ⁝ \\
+        \vdots \\
         v_m
       \end{bmatrix}
     `}

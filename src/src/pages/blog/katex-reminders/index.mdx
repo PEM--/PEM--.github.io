@@ -13,6 +13,7 @@ import Katex from '../../../components/Katex'
 import AnnotationLower from './AnnotationLower'
 import Existence from './Existence'
 import FakeUnicode from './FakeUnicode'
+import OperationOnInterval from './OperationOnInterval'
 import VectorAndMatrix from './VectorAndMatrix'
 
 ## Annotations
@@ -35,12 +36,33 @@ Same as before, just replace `overbrace` with `underbrace`.
 > `~` is handy character in Katex for injecting a space into your equation for readability.
 
 ```katex
-  \forall~x \in \reals, \exist ~a ~and~ b \in \N ~where~
-  x = \begin{cases}
-    a < x \\
-    x < b
-  \end{cases}
+\forall~x \in \reals, \exist ~a ~and~ b \in \N ~where~
+x = \begin{cases}
+  a < x \\
+  x < b
+\end{cases}
 ```
+<br />
+
+## Operations on intervals
+
+<OperationOnInterval />
+
+> For other big operator, just replace `\sum` with your operator of choice.
+> Here's a list of commonly used ones:
+> * `\sum` <Katex text='\sum' />
+> * `\prod` <Katex text='\prod' />
+> * `\int` <Katex text='\int' />
+> * `\iint` <Katex text='\iint' />
+
+```katex
+\begin{aligned}
+  S_n &= \sum_{n\in\N} a^n \\
+      &= 1 + a + a^2 + \dots + a^n \\
+      &= \cfrac{1 - a^{n+1}}{1 - a}
+\end{aligned}
+```
+<br />
 
 ## Vector & matrix
 <VectorAndMatrix />
@@ -49,25 +71,26 @@ Same as before, just replace `overbrace` with `underbrace`.
 \vec{v} = A \cdot \vec{x} = 
 % Matrix
 \begin{bmatrix}
-  a_{1,1} & … & z_{m,1} \\
-  ⁝       & … & ⁝ \\
-  a_{1,n} & … & z_{m,n}
+  a_{1,1} & \dots & z_{m,1} \\
+  \vdots  & \ddots & \vdots \\
+  a_{1,n} & \dots & z_{m,n}
 \end{bmatrix}
 \cdot
 % Vector
 \begin{bmatrix}
   x_n \\
-  ⁝ \\
+  \vdots \\
   x_n
 \end{bmatrix}
 =
 % Result vector
 \begin{bmatrix}
   v_m \\
-  ⁝ \\
+  \vdots \\
   v_m
 \end{bmatrix}
 ```
+<br />
 
 ## Gotchas on escape characters & unicode
 ### For Katex
@@ -88,7 +111,7 @@ to call any React component on demand, simply create a special component that wi
 rid of the pesky interpretation, like in this [example](https://github.com/PEM--/PEM--.github.io/blob/master/src/src/pages/blog/katex-reminders/FakeUnicode.js).
 
 ## Some links
-* [Katex site](https://katex.org/)
+* [Katex supported functions](https://katex.org/docs/supported.html)
 * [Katex with React](https://github.com/PEM--/PEM--.github.io/blob/master/src/src/components/Katex.js)
   with the sample usage:
     ```js
