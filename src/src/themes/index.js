@@ -11,5 +11,6 @@ export default {
   smallFontSize: '10px',
   smallFontWeight: 300,
   gray: '#7f7f7f',
-  lightGray: '#e7e7e7'
+  lightGray: '#e7e7e7',
+  warningColor: '#f4ab55'
 }
