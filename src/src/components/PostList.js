@@ -9,7 +9,7 @@ import H1 from './H1'
 
 const PostContainer = styled.li`
   border: 1px solid ${({ theme }) => theme.lightGray};
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   transition: border-color ${({ theme }) => theme.defaultTransition};
   &:not(:first-of-type) { margin-top: 1em; }
   a {
