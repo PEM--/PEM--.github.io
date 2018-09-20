@@ -5,9 +5,10 @@ export default styled.h1`
   position: relative;
   width: calc(100% - 60px);
   small {
-    color: ${({ theme }) => theme.lightGray};
+    color: ${({ theme }) => theme.gray};
     display: block;
-    font-size: .4em;
+    font-weight: ${({ theme }) => theme.smallFontWeight}; 
+    font-size: ${({ theme }) => theme.smallFontSize};
     font-style: italic;
     ${position('absolute', null, '-60px', 0, null)}
     text-align: right;

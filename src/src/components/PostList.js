@@ -25,10 +25,11 @@ const PostContainer = styled.li`
     position: relative;
     width: calc(100% - 80px);
     small {
+      color: ${({ theme }) => theme.gray};
       display: block;
-      font-size: .6em;
+      font-weight: ${({ theme }) => theme.smallFontWeight}; 
+      font-size: ${({ theme }) => theme.smallFontSize};
       font-style: italic;
-      font-weight: 300;
       ${position('absolute', 0, '-80px', null, null)}
       text-align: right;
     }

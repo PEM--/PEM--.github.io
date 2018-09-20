@@ -6,6 +6,8 @@ export default {
   headerFont: `-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue','sans-serif'`,
   maxWidth: 960,
   secondaryColor: '#ff0000',
+  smallFontSize: '10px',
+  smallFontWeight: 300,
   gray: 'hsla(0,0%,0%,.5)',
   lightGray: 'hsla(0,0%,0%,.1)'
 }
