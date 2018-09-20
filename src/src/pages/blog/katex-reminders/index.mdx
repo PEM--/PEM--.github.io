@@ -11,6 +11,7 @@ import Emoji from 'react-emoji-render'
 
 import Katex from '../../../components/Katex'
 import AnnotationLower from './AnnotationLower'
+import Existence from './Existence'
 import FakeUnicode from './FakeUnicode'
 import VectorAndMatrix from './VectorAndMatrix'
 
@@ -29,9 +30,17 @@ Same as before, just replace `overbrace` with `underbrace`.
 
 ## Existence & condition
 
-<Katex displayMode text='\forall~x \in \reals, \exist ~a ~and~ b \in \N ~where~' />
+<Existence />
 
-> `~` is handy character in Katex for injectig a space into your equation for readability.
+> `~` is handy character in Katex for injecting a space into your equation for readability.
+
+```katex
+  \forall~x \in \reals, \exist ~a ~and~ b \in \N ~where~
+  x = \begin{cases}
+    a < x \\
+    x < b
+  \end{cases}
+```
 
 ## Vector & matrix
 <VectorAndMatrix />
