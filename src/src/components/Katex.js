@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import katex from 'katex'
-import { boolean, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 
 export default class Katex extends Component {
   static propTypes = {
-    displayMode: boolean,
+    displayMode: bool,
     text: string.isRequired
   }
   constructor (props) {

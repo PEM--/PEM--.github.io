@@ -13,8 +13,7 @@ const ContributeContainer = styled.span`
 
 export default class Contribute extends Component {
   static propTypes = {
-    href: string.isRequired,
-    text: string.isRequired
+    slug: string.isRequired
   }
   shouldComponentUpdate = () => false
   render () {

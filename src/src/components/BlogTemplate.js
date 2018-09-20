@@ -1,14 +1,13 @@
 import Disqus from 'disqus-react'
 import React, { Fragment, PureComponent } from 'react'
-import { MDXProvider } from "@mdx-js/tag"
 
 import Contribute from '../components/Contribute'
-import ExternalLink from '../components/ExternalLink'
 import H1 from '../components/H1'
 import Layout from '../components/Layout'
+import MdxRenderer from '../components/MdxRenderer'
 import ShareIconBar from '../components/ShareIconBar'
 
-export default class MdxBlogPost extends PureComponent {
+export default class BlogTemplate extends PureComponent {
   render () {
     const { children, location: { href }, pageContext: { frontmatter } } = this.props
     const discussConfig = {
@@ -20,13 +19,7 @@ export default class MdxBlogPost extends PureComponent {
       {({ siteMetadata }) => (<Fragment>
         <H1>{frontmatter.title}</H1>
         {frontmatter.contribute && <Contribute slug={frontmatter.slug} />}
-        <MDXProvider
-          components={{
-            a: ({ href, children }) => <ExternalLink href={href} text={children} />
-          }}
-        >
-          {children}
-        </MDXProvider>
+        <MdxRenderer>{children}</MdxRenderer>
         <ShareIconBar href={href} title={frontmatter.title} />
         {frontmatter.comment && <Disqus.DiscussionEmbed
           config={discussConfig}

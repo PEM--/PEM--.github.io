@@ -24,7 +24,7 @@ module.exports = {
       }
     ],
     defaultLayouts: {
-      default: require.resolve('../templates/MdxBlogPost.js')
+      default: require.resolve('../components/BlogTemplate.js')
     },
     extensions: ['.mdx']
   }

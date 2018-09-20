@@ -13,5 +13,6 @@ const GlobalStyle = createGlobalStyle /* css */ `
       overflow: hidden;
     }
   }
+  .katex-display { margin: 0 0 .5em; }
 `
 export default GlobalStyle
