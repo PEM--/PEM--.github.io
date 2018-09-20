@@ -19,6 +19,9 @@ export default () => (<Layout>
       <LiLink href='https://www.styled-components.com/' text='Styled Components' />
       <li><Emoji text='... to name a few. Thank you all for sharing such massive technologies :+1:' /></li>
     </ul>
+    <p>All its source code is released under the MIT license and available in
+    this <ExternalLink href='https://github.com/PEM--/PEM--.github.io/tree/master/src' text='Github repository' />.
+    Feel free to adapt it to suit your need.</p>
     <h1>About me</h1>
     <p>You can find me on my
       &nbsp;<ExternalLink href='https://www.linkedin.com/in/pemarchandet/' text="LinkedIn's profile" />&nbsp;
