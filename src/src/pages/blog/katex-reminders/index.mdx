@@ -9,7 +9,30 @@ type: "blog"
 ---
 import Katex from '../../../components/Katex'
 
-Inline: <Katex text="a^2 + b^2 = c^2" />
+## Vector & matrix
+<Katex displayMode text='V = A \cdot x = \begin{bmatrix}a_{1,1} & … & a_{m,1} \\ ⁝ & … & ⁝ \\ a_{1,n} & … & a_{m,n} \end{bmatrix} \cdot \begin{bmatrix} x_n \\ ⁝ \\ x_n \end{bmatrix} = \begin{bmatrix} v_m \\ ⁝ \\ v_m \end{bmatrix}' />
+
+```katex
+V = A \cdot x = 
+% Fist matrix
+\begin{bmatrix}
+  a_{1,1} & … & z_{m,1} \\
+  ⁝       & … & ⁝ \\
+  a_{1,n} & … & z_{m,n}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+  x_n \\
+  ⁝ \\
+  x_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+  v_m \\
+  ⁝ \\
+  v_m
+\end{bmatrix}
+```
 
 ## Some links
 * [Katex site](https://katex.org/)
