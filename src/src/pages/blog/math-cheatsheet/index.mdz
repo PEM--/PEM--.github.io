@@ -19,10 +19,10 @@ Stuff about matrix
 ## Calculus
 Stuff about gradient, derivatives and integrals
 
-Inline: <Katex text="a^2 + b^2 = c^2" />
+Inline: <Katex formulae="a^2 + b^2 = c^2" />
 
 Display mode:
-<Katex displayMode text="a^2 + b^2 = c^2" />
+<Katex displayMode formulae="a^2 + b^2 = c^2" />
 
 ## Complementary
 ### The Map of Mathematics

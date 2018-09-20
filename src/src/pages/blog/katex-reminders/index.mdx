@@ -18,7 +18,7 @@ import VectorAndMatrix from './VectorAndMatrix'
 
 ## Annotations
 Upper note:
-<Katex displayMode text='\overbrace{a \cdot x^2 + b \cdot x +c}^{\text{Polynomial expression}}' />
+<Katex displayMode formulae='\overbrace{a \cdot x^2 + b \cdot x +c}^{\text{Polynomial expression}}' />
 
 ```katex
 \overbrace{a \cdot x^2 + b \cdot x +c}^{\text{Polynomial expression}}
@@ -50,10 +50,10 @@ x = \begin{cases}
 
 > For other big operator, just replace `\sum` with your operator of choice.
 > Here's a list of commonly used ones:
-> * `\sum` <Katex text='\sum' />
-> * `\prod` <Katex text='\prod' />
-> * `\int` <Katex text='\int' />
-> * `\iint` <Katex text='\iint' />
+> * `\sum` <Katex formulae='\sum' />
+> * `\prod` <Katex formulae='\prod' />
+> * `\int` <Katex formulae='\int' />
+> * `\iint` <Katex formulae='\iint' />
 
 ```katex
 \begin{aligned}
@@ -115,8 +115,8 @@ rid of the pesky interpretation, like in this [example](https://github.com/PEM--
 * [Katex with React](https://github.com/PEM--/PEM--.github.io/blob/master/src/src/components/Katex.js)
   with the sample usage:
     ```js
-    <Katex displayMode text="a^2 + b^2 = c^2" />
+    <Katex displayMode formulae="a^2 + b^2 = c^2" />
     ```
   
   That displays:
-  <Katex displayMode text="a^2 + b^2 = c^2" />
+  <Katex displayMode formulae="a^2 + b^2 = c^2" />

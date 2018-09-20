@@ -3,7 +3,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: ${theme.bodyColor};
 	background: none;
-	font-family: 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: ${theme.monoSpaceFont};
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;

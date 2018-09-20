@@ -5,7 +5,7 @@ import Katex from '../../../components/Katex'
 export default function () {
   return <Katex
     displayMode
-    text={String.raw`
+    formulae={String.raw`
       \vec{v} = A \cdot \vec{x} = 
       % Matrix
       \begin{bmatrix}

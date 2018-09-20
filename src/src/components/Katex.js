@@ -5,14 +5,14 @@ import { bool, string } from 'prop-types'
 export default class Katex extends Component {
   static propTypes = {
     displayMode: bool,
-    text: string.isRequired
+    formulae: string.isRequired
   }
-  constructor (props) {
-    super(props)
-    this.content = katex.renderToString(props.text, { displayMode: props.displayMode })
-  }
-  shouldComponentUpdate = () => false
+  shouldComponentUpdate = ({ formulae }) => this.props.formulae !== formulae
   render () {
-    return <span dangerouslySetInnerHTML={{ __html: this.content }} />
+    const __html = katex.renderToString(
+      this.props.formulae,
+      { displayMode: this.props.displayMode }
+    )
+    return <span dangerouslySetInnerHTML={{ __html }} />
   }
 }

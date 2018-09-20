@@ -7,7 +7,7 @@ import ShareIconBar from '../components/ShareIconBar'
 
 const LiLink = props => <li><ExternalLink {...props} /></li>
 
-export default () => (<Layout>
+export default () => (<Layout title='About' >
   {({ siteMetadata }) => (<Fragment>
     <h1>About this blog</h1>
     <p>This blog has been created with:</p>

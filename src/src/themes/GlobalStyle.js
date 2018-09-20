@@ -18,5 +18,6 @@ const GlobalStyle = createGlobalStyle /* css */ `
   .katex-display { margin: 0 0 .5em; }
   .katex { font: 300 1.15em KaTeX_Main, serif; }
   ${({ theme }) => prism(theme)}
+  .center { text-align: center; }
 `
 export default GlobalStyle

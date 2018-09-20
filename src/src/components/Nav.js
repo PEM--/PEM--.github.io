@@ -86,6 +86,7 @@ export default class Nav extends Component {
         <HomeLink to='/'><h1>{this.props.title}</h1></HomeLink>
         <LinkList>
           <li><Link to='/'>Home</Link></li>
+          <li><Link to='/tools'>Tools</Link></li>
           <li><Link to='/about'>About</Link></li>
         </LinkList>
       </Header>
