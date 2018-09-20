@@ -7,6 +7,7 @@ import { any } from 'prop-types'
 import ExternalLink from '../components/ExternalLink'
 
 const PwithSemiColonRaw = styled.p`
+  text-align: justify;
   &.semiColon { margin-bottom: 0; }
 `
 

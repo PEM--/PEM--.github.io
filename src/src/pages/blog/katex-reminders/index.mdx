@@ -7,6 +7,8 @@ slug: "katex-reminders"
 title: "Katex reminders"
 type: "blog"
 ---
+import Emoji from 'react-emoji-render'
+
 import Katex from '../../../components/Katex'
 import AnnotationLower from './AnnotationLower'
 import FakeUnicode from './FakeUnicode'
@@ -55,8 +57,9 @@ Same as before, just replace `overbrace` with `underbrace`.
 ## Gotchas on escape characters & unicode
 ### For Katex
 While using Katex in the browser, you may encounter issues with Unicode and character encoding.
-This one <FakeUnicode /> has a particularly bad behaviour as it makes JS trying to interpret
-the following characters as an Unicode. To prevent this interpretation, simply use:
+This one <FakeUnicode /> has a particularly bad behaviour <Emoji text=':scream:.' /> It makes
+JS trying to interpret the following characters as an Unicode. To prevent this interpretation,
+simply use:
 
 ```js
 String.raw`...Any raw string that you want...`
@@ -67,7 +70,7 @@ More information on [MSN web docs](https://developer.mozilla.org/fr/docs/Web/Jav
 ### Fox MDX
 Like for Katex, some escape character may crash your MDX display. With MDX capability
 to call any React component on demand, simply create a special component that will get
-rid of the interpretation, like in this example.
+rid of the interpretation, like in this [example](https://github.com/PEM--/PEM--.github.io/blob/master/src/src/pages/blog/katex-reminders/FakeUnicode.js).
 
 ## Some links
 * [Katex site](https://katex.org/)
