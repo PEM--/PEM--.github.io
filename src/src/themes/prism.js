@@ -19,12 +19,12 @@ pre[class*="language-"] {
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: ${theme.borderRadius};
-	border: 1px solid ${theme.lightGray};
+	border: 1px solid ${theme.gray};
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: ${theme.bgColor};
+	background: ${theme.lightGray};
 }
 
 /* Inline code */
