@@ -8,6 +8,21 @@ title: "Katex reminders"
 type: "blog"
 ---
 import Katex from '../../../components/Katex'
+import AnnotationLower from './AnnotationLower'
+
+## Annotations
+Upper note:
+<Katex displayMode text='\overbrace{a \cdot x^2 + b \cdot x +c}^{\text{Polynomial expression}}' />
+
+```katex
+\overbrace{a \cdot x^2 + b \cdot x +c}^{\text{Polynomial expression}}
+```
+
+Lower note:
+<AnnotationLower />
+
+Same as before, just replace `overbrace` with `underbrace`.
+
 
 ## Vector & matrix
 <Katex displayMode text='\vec{v} = A \cdot \vec{x} =\begin{bmatrix}a_{1,1} & … & a_{m,1} \\ ⁝ & … & ⁝ \\ a_{1,n} & … & a_{m,n} \end{bmatrix} \cdot \begin{bmatrix} x_n \\ ⁝ \\ x_n \end{bmatrix} = \begin{bmatrix} v_m \\ ⁝ \\ v_m \end{bmatrix}' />
