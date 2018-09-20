@@ -9,6 +9,8 @@ type: "blog"
 ---
 import Katex from '../../../components/Katex'
 import AnnotationLower from './AnnotationLower'
+import FakeUnicode from './FakeUnicode'
+import VectorAndMatrix from './VectorAndMatrix'
 
 ## Annotations
 Upper note:
@@ -23,9 +25,8 @@ Lower note:
 
 Same as before, just replace `overbrace` with `underbrace`.
 
-
 ## Vector & matrix
-<Katex displayMode text='\vec{v} = A \cdot \vec{x} =\begin{bmatrix}a_{1,1} & … & a_{m,1} \\ ⁝ & … & ⁝ \\ a_{1,n} & … & a_{m,n} \end{bmatrix} \cdot \begin{bmatrix} x_n \\ ⁝ \\ x_n \end{bmatrix} = \begin{bmatrix} v_m \\ ⁝ \\ v_m \end{bmatrix}' />
+<VectorAndMatrix />
 
 ```katex
 \vec{v} = A \cdot \vec{x} = 
@@ -50,6 +51,23 @@ Same as before, just replace `overbrace` with `underbrace`.
   v_m
 \end{bmatrix}
 ```
+
+## Gotchas on escape characters & unicode
+### For Katex
+While using Katex in the browser, you may encounter issues with Unicode and character encoding.
+This one <FakeUnicode /> has a particularly bad behaviour as it makes JS trying to interpret
+the following characters as an Unicode. To prevent this interpretation, simply use:
+
+```js
+String.raw`...Any raw string that you want...`
+```
+
+More information on [MSN web docs](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/raw).
+
+### Fox MDX
+Like for Katex, some escape character may crash your MDX display. With MDX capability
+to call any React component on demand, simply create a special component that will get
+rid of the interpretation, like in this example.
 
 ## Some links
 * [Katex site](https://katex.org/)
