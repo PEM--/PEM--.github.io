@@ -1,7 +1,7 @@
 export default theme => /* css */`
 code[class*="language-"],
 pre[class*="language-"] {
-	color: ${theme.bgColor};
+	color: ${theme.bodyColor};
 	background: none;
 	font-family: 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
@@ -19,11 +19,12 @@ pre[class*="language-"] {
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: ${theme.borderRadius};
+	border: 1px solid ${theme.lightGray};
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: ${theme.bodyColor};
+	background: ${theme.bgColor};
 }
 
 /* Inline code */
@@ -37,11 +38,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+	color: ${theme.gray};
 }
 
 .token.punctuation {
-	color: ${theme.bgColor};
+	color: ${theme.bodyColor};
 }
 
 .namespace {
@@ -53,12 +54,12 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+	color: ${theme.secondaryColor};
 }
 
 .token.boolean,
 .token.number {
-	color: #ae81ff;
+	color: ${theme.secondaryColor};
 }
 
 .token.selector,
@@ -67,7 +68,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+	color: ${theme.secondaryColor};
 }
 
 .token.operator,
@@ -76,23 +77,23 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: ${theme.bgColor};
+	color: ${theme.bodyColor};
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #e6db74;
+	color: ${theme.secondaryColor};
 }
 
 .token.keyword {
-	color: #66d9ef;
+	color: ${theme.secondaryColor};
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+	color: ${theme.secondaryColor};
 }
 
 .token.important,

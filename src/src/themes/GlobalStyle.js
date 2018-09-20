@@ -16,8 +16,7 @@ const GlobalStyle = createGlobalStyle /* css */ `
     }
   }
   .katex-display { margin: 0 0 .5em; }
-  main .gatsby-highlight {
-    ${({ theme }) => prism(theme)}
-  }
+  .katex { font: 300 1.15em KaTeX_Main, serif; }
+  ${({ theme }) => prism(theme)}
 `
 export default GlobalStyle
