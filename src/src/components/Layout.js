@@ -30,7 +30,7 @@ export default class Layout extends Component {
   }
   componentDidMount () {
     if (!Layout.fbPixelInitialized) {
-      ReactPixel.init(facebookPixelId, {}, {});
+      ReactPixel.init(facebookPixelId, {}, {})
       Layout.fbPixelInitialized = true
     }
     ReactPixel.pageView()
