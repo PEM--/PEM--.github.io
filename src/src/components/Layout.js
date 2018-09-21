@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
+import React, { Component, Fragment } from 'react'
+import ReactPixel from 'react-facebook-pixel'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from  'gatsby'
 import { any, string } from 'prop-types'
@@ -18,32 +19,21 @@ const LayoutDiv = styled.div`
   position: relative;
 `
 
-/* eslint-disable */
-// Kismetric code
-function _kms (u){
-  setTimeout(function(){
-    var d = document, f = d.getElementsByTagName('script')[0],
-    s = d.createElement('script');
-    s.type = 'text/javascript'; s.async = true; s.src = u;
-    f.parentNode.insertBefore(s, f);
-  }, 1);
-}
-/* eslint-enable */
+const facebookPixelId = '1915349895435128'
 
 export default class Layout extends Component {
+  static fbPixelInitialized = false
   static propTypes = {
     children: any.isRequired,
     description: string,
     title: string
   }
   componentDidMount () {
-    /* eslint-disable */
-    // Kismetric code
-    var _kmq = _kmq || [];
-    var _kmk = _kmk || '3377e7168a845ea4ea40f12c6853255b9192f2db';
-    _kms('//i.kissmetrics.com/i.js');
-    _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
-    /* eslint-enable */
+    if (!Layout.fbPixelInitialized) {
+      ReactPixel.init(facebookPixelId, {}, {});
+      Layout.fbPixelInitialized = true
+    }
+    ReactPixel.pageView()
   }
   shouldComponentUpdate = () => false
   render () {
