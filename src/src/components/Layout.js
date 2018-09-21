@@ -18,7 +18,26 @@ const LayoutDiv = styled.div`
   position: relative;
 `
 
+/* eslint-disable */
+// Kismetric code
+function _kms (u){
+  setTimeout(function(){
+    var d = document, f = d.getElementsByTagName('script')[0],
+    s = d.createElement('script');
+    s.type = 'text/javascript'; s.async = true; s.src = u;
+    f.parentNode.insertBefore(s, f);
+  }, 1);
+}
+/* eslint-enable */
+
 export default function Layout ({ children, title, description }) {
+  /* eslint-disable */
+  // Kismetric code
+  var _kmq = _kmq || [];
+  var _kmk = _kmk || '3377e7168a845ea4ea40f12c6853255b9192f2db';
+  _kms('//i.kissmetrics.com/i.js');
+  _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+  /* eslint-enable */
   return (<ThemeProvider theme={theme}>
     <StaticQuery
       query={graphql`
