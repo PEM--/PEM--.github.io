@@ -12,6 +12,7 @@ module.exports = {
   siteMetadata: {
     description: 'Notes and posts about development, Math, ML and AI',
     discussShortName: 'https-pem-github-io',
+    googleSearchConsoleOwnershipId: 'IIdc-ufE7Rf_Gn8p7Ee83Ua7obcDac8tk2DLW_p87Ak',
     siteUrl: 'https://pem--.github.io',
     title
   },

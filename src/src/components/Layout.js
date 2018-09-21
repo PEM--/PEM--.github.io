@@ -27,6 +27,7 @@ export default function Layout ({ children, title, description }) {
             siteMetadata {
               description
               discussShortName
+              googleSearchConsoleOwnershipId
               siteUrl
               title
             }
@@ -42,6 +43,7 @@ export default function Layout ({ children, title, description }) {
           <meta property='og:description' content={description || siteMetadata.description} />
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:creator' content='PEM___' />
+          <meta name='google-site-verification' content={siteMetadata.googleSearchConsoleOwnershipId} />
         </Helmet>
       <Nav title={siteMetadata.title} />
       <Main>
