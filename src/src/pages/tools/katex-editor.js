@@ -22,7 +22,8 @@ const Textarea = styled(TextareaRaw)`
   font-size: .8em;
   outline: 0;
   padding: 1em;
-  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
   transition:
     background-color ${({ theme }) => theme.defaultTransition},
     border-color ${({ theme }) => theme.defaultTransition};
