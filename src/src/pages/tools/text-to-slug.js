@@ -3,10 +3,15 @@ import kebabCase from 'lodash/kebabCase'
 import styled from 'styled-components'
 import { object } from 'prop-types'
 
+import ClipboardButton from '../../components/ClipboardButton'
 import Layout from '../../components/Layout'
 import ShareIconBar from '../../components/ShareIconBar'
 
 export const title = 'Text to slug'
+
+const InputDiv = styled.div`
+  position: relative;
+`
 
 const Input = styled.input`
   background: ${({ theme }) => theme.bgColor};
@@ -33,16 +38,25 @@ const Presults = styled.p`
 
 class TextToSlug extends Component {
   static defaultText = 'Some nice title'
+  static inputId = 'textToSlug'
   state = {
+    clipboardDisplayed: false,
     text: TextToSlug.defaultText
   }
-  shouldComponentUpdate = (_, { text }) => this.state.text !== text
+  shouldComponentUpdate = (_, { clipboardDisplayed, text }) =>
+    this.state.clipboardDisplayed !== clipboardDisplayed ||
+    this.state.text !== text
   handleChange = e => this.setState({ text: e.target.value })
+  hideClipboard = () => this.setState({ clipboardDisplayed: false })
+  showClipboard = () => this.setState({ clipboardDisplayed: true })
   render () {
-    const { text } = this.state
+    const { clipboardDisplayed, text } = this.state
     return (<div>
       <p style={{ marginBottom: 0 }}>Enter your text:</p>
-      <Input autoFocus spellCheck onChange={this.handleChange} value={text} />
+      <InputDiv onMouseEnter={this.showClipboard} onMouseLeave={this.hideClipboard}>
+        <Input id={TextToSlug.inputId} autoFocus onChange={this.handleChange} spellCheck value={text} />
+        <ClipboardButton displayed={clipboardDisplayed} to={TextToSlug.inputId} />
+      </InputDiv>
       <p style={{ marginBottom: 0, marginTom: '1em' }}>Results:</p>
       <Presults className='center'>{kebabCase(text)}</Presults>
     </div>)

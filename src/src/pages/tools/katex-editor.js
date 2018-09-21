@@ -3,11 +3,16 @@ import TextareaRaw from 'react-textarea-autosize'
 import styled from 'styled-components'
 import { object } from 'prop-types'
 
+import ClipboardButton from '../../components/ClipboardButton'
 import Katex from '../../components/Katex'
 import Layout from '../../components/Layout'
 import ShareIconBar from '../../components/ShareIconBar'
 
 export const title = 'Katex editor'
+
+const TextareaDiv = styled.div`
+  position: relative;
+`
 
 const Textarea = styled(TextareaRaw)`
   background: ${({ theme }) => theme.bgColor};
@@ -33,16 +38,31 @@ class KatexEditor extends Component {
       &= 1 + a + a^2 + \dots + a^n \\
       &= \cfrac{1 - a^{n+1}}{1 - a}
 \end{aligned}`
+  static textareaId = 'katexEditor'
   state = {
+    clipboardDisplayed: false,
     formulae: KatexEditor.defaultFormulae
   }
-  shouldComponentUpdate = (_, { formulae }) => this.state.formulae !== formulae
+  shouldComponentUpdate = (_, { clipboardDisplayed, formulae }) =>
+    this.state.clipboardDisplayed !== clipboardDisplayed ||
+    this.state.formulae !== formulae
   handleChange = e => this.setState({ formulae: e.target.value })
+  hideClipboard = () => this.setState({ clipboardDisplayed: false })
+  showClipboard = () => this.setState({ clipboardDisplayed: true })
   render () {
-    const { formulae } = this.state
+    const { clipboardDisplayed, formulae } = this.state
     return (<div>
       <p style={{ marginBottom: 0 }}>Enter your Katex formulae:</p>
-      <Textarea autoFocus spellCheck={false} onChange={this.handleChange} value={formulae} />
+      <TextareaDiv onMouseEnter={this.showClipboard} onMouseLeave={this.hideClipboard}>
+        <Textarea
+          autoFocus
+          id={KatexEditor.textareaId}
+          onChange={this.handleChange}
+          spellCheck={false}
+          value={formulae}
+        />
+        <ClipboardButton displayed={clipboardDisplayed} to={KatexEditor.textareaId} />
+      </TextareaDiv>
       <p style={{ marginBottom: 0, marginTom: '1em' }}>Results:</p>
       <p className='center'><Katex formulae={formulae}/></p>
     </div>)
@@ -59,10 +79,7 @@ export default class KatexEditorPage extends Component {
       {({ siteMetadata }) => (<Fragment>
         <h1>{title}</h1>
         <KatexEditor />
-        <ShareIconBar
-          href={this.props.location.href}
-          title={`${siteMetadata.title}: ${title}`}
-        />
+        <ShareIconBar href={this.props.location.href} title={`${siteMetadata.title}: ${title}`}/>
       </Fragment>)}
     </Layout>)
   }
