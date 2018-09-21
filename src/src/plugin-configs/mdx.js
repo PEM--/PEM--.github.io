@@ -10,8 +10,8 @@ module.exports = {
         options: {
           maxWidth: theme.maxWidth,
           linkImagesToOriginal: false,
-          withWebp: { quality: 50 },
-        },
+          withWebp: { quality: 50 }
+        }
       },
       {
         resolve: 'gatsby-remark-prismjs',

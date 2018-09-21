@@ -19,12 +19,13 @@ const ShareIconBarContainer = styled.div`
   &::before, &::after {
     content: '';
     display: block;
-    background: linear-gradient(
-      to right,
-      transparent,
-      ${({ theme }) => theme.lightGray},
-      transparent
-    );
+    background:
+      linear-gradient(
+        to right,
+        transparent,
+        ${({ theme }) => theme.lightGray},
+        transparent
+      );
     position: absolute;
     ${size('1px', '100%')}
   }

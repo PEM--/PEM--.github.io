@@ -4,8 +4,10 @@ export default {
   borderRadius: '5px',
   defaultTransition: '.3s ease-in-out',
   headerColor: '#181818',
+  /* eslint-disable */
   headerFont: `-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue','sans-serif'`,
   monospaceFont: `'Andale Mono', 'Ubuntu Mono', monospace`,
+  /* eslint-enable */
   maxWidth: 960,
   secondaryColor: '#e70808',
   smallFontSize: '10px',

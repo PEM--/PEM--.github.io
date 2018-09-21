@@ -6,7 +6,7 @@ const sitemap = require('./src/plugin-configs/sitemap')
 const styledComponents = require ('./src/plugin-configs/styledComponents')
 const typography = require('./src/plugin-configs/typography')
 
-const title = "PEM's blog"
+const title = 'PEM\'s blog'
 
 module.exports = {
   siteMetadata: {
@@ -27,5 +27,5 @@ module.exports = {
     'gatsby-plugin-offline',
     sitemap,
     robotsTxt
-  ],
+  ]
 }

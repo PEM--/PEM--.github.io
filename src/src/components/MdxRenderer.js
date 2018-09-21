@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import isString from 'lodash/isString'
 import styled from 'styled-components'
-import { MDXProvider } from "@mdx-js/tag"
+import { MDXProvider } from '@mdx-js/tag'
 import { any } from 'prop-types'
 import { position } from 'polished'
 

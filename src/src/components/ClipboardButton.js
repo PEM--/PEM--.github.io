@@ -59,7 +59,7 @@ const SuccessMsg = styled.div`
   padding: .25em;
   opacity: 0;
   pointer-events: none;
-  text-align: center;
+  text-align: droite;
   transition: opacity ${({ theme }) => theme.defaultTransition};
   width: 100%;
   &.displayed { opacity: 1; }

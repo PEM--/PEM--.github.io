@@ -10,5 +10,5 @@ module.exports = (title) => ({
     theme_color: '#ff0000',
     display: 'minimal-ui',
     icon: faviconPath('favicon.png')
-  },
+  }
 })

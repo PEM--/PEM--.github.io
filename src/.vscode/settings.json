@@ -1,0 +1,12 @@
+{
+  "eslint.enable": true,
+  "eslint.options": {
+    "cache": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+  "stylelint.enable": true,
+  "stylelint.config": null,
+  "javascript.implicitProjectConfig.checkJs": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+}

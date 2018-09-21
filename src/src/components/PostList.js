@@ -27,7 +27,7 @@ const PostContainer = styled.li`
     small {
       color: ${({ theme }) => theme.gray};
       display: block;
-      font-weight: ${({ theme }) => theme.smallFontWeight}; 
+      font-weight: ${({ theme }) => theme.smallFontWeight};
       font-size: ${({ theme }) => theme.smallFontSize};
       font-style: italic;
       ${position('absolute', 0, '-80px', null, null)}

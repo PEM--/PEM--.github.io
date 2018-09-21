@@ -7,7 +7,7 @@ export default styled.h1`
   small {
     color: ${({ theme }) => theme.gray};
     display: block;
-    font-weight: ${({ theme }) => theme.smallFontWeight}; 
+    font-weight: ${({ theme }) => theme.smallFontWeight};
     font-size: ${({ theme }) => theme.smallFontSize};
     font-style: italic;
     ${position('absolute', null, '-60px', 0, null)}
