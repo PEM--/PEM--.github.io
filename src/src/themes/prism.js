@@ -3,7 +3,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: ${theme.bodyColor};
 	background: none;
-	font-family: ${theme.monoSpaceFont};
+	font-family: ${theme.monospaceFont};
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;

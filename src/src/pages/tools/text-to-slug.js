@@ -1,22 +1,21 @@
 import React, { Component, Fragment } from 'react'
-import TextareaRaw from 'react-textarea-autosize'
+import kebabCase from 'lodash/kebabCase'
 import styled from 'styled-components'
 import { object } from 'prop-types'
 
-import Katex from '../../components/Katex'
 import Layout from '../../components/Layout'
 import ShareIconBar from '../../components/ShareIconBar'
 
-export const title = 'Katex editor'
+export const title = 'Text to slug'
 
-const Textarea = styled(TextareaRaw)`
+const Input = styled.input`
   background: ${({ theme }) => theme.bgColor};
   border: 1px solid ${({ theme }) => theme.lightGray};
   border-radius: ${({ theme }) => theme.borderRadius};
-  font-family: ${({ theme }) => theme.monospaceFont};
   font-size: .8em;
+  margin-bottom: 1em;
+  padding: .5em 1em;
   outline: 0;
-  padding: 1em;
   width: 100%;
   transition:
     background-color ${({ theme }) => theme.defaultTransition},
@@ -27,29 +26,30 @@ const Textarea = styled(TextareaRaw)`
   }
 `
 
-class KatexEditor extends Component {
-  static defaultFormulae = String.raw`\begin{aligned}
-  S_n &= \sum_{n\in\N} a^n \\
-      &= 1 + a + a^2 + \dots + a^n \\
-      &= \cfrac{1 - a^{n+1}}{1 - a}
-\end{aligned}`
+const Presults = styled.p`
+  font-family: ${({ theme }) => theme.monospaceFont};
+  font-weight: bold;
+`
+
+class TextToSlug extends Component {
+  static defaultText = 'Some nice title'
   state = {
-    formulae: KatexEditor.defaultFormulae
+    text: TextToSlug.defaultText
   }
-  shouldComponentUpdate = (_, { formulae }) => this.state.formulae !== formulae
-  handleChange = e => this.setState({ formulae: e.target.value })
+  shouldComponentUpdate = (_, { text }) => this.state.text !== text
+  handleChange = e => this.setState({ text: e.target.value })
   render () {
-    const { formulae } = this.state
+    const { text } = this.state
     return (<div>
-      <p style={{ marginBottom: 0 }}>Enter your Katex formulae:</p>
-      <Textarea autoFocus spellCheck={false} onChange={this.handleChange} value={formulae} />
+      <p style={{ marginBottom: 0 }}>Enter your text:</p>
+      <Input autoFocus spellCheck onChange={this.handleChange} value={text} />
       <p style={{ marginBottom: 0, marginTom: '1em' }}>Results:</p>
-      <p className='center'><Katex formulae={formulae}/></p>
+      <Presults className='center'>{kebabCase(text)}</Presults>
     </div>)
   }
 }
 
-export default class KatexEditorPage extends Component {
+export default class TextToSlugPage extends Component {
   static propTypes = {
     location: object.isRequired
   }
@@ -58,7 +58,7 @@ export default class KatexEditorPage extends Component {
     return (<Layout title={title}>
       {({ siteMetadata }) => (<Fragment>
         <h1>{title}</h1>
-        <KatexEditor />
+        <TextToSlug />
         <ShareIconBar
           href={this.props.location.href}
           title={`${siteMetadata.title}: ${title}`}
