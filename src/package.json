@@ -54,6 +54,7 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.0.0-rc.14",
     "postcss": "^7.0.2",
     "postcss-syntax": "^0.34.0",
     "prettier": "^1.14.3",
@@ -75,11 +76,17 @@
     "develop": "gatsby develop",
     "deploy": "yarn build && cp -rf public/* .. && git add -A && git commit -am 'Deploy' && git push",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
+    "lint": "yarn lint:js && yarn lint:css",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint *.js src/**/*.js",
     "prune": "yarn clean && rm -rf node_modules",
     "serve": "gatsby serve",
     "ssr": "yarn build && yarn serve"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
   },
   "repository": {
     "type": "git",

@@ -11,6 +11,9 @@ extends:
 plugins:
 - import
 - react
+settings:
+  react:
+    version: 16.5.2
 parserOptions:
   ecmaVersion: 2016
   sourceType: module
