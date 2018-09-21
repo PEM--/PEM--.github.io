@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from  'gatsby'
@@ -30,51 +30,57 @@ function _kms (u){
 }
 /* eslint-enable */
 
-export default function Layout ({ children, title, description }) {
-  /* eslint-disable */
-  // Kismetric code
-  var _kmq = _kmq || [];
-  var _kmk = _kmk || '3377e7168a845ea4ea40f12c6853255b9192f2db';
-  _kms('//i.kissmetrics.com/i.js');
-  _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
-  /* eslint-enable */
-  return (<ThemeProvider theme={theme}>
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              description
-              discussShortName
-              googleSearchConsoleOwnershipId
-              siteUrl
-              title
+export default class Layout extends Component {
+  static propTypes = {
+    children: any.isRequired,
+    description: string,
+    title: string
+  }
+  componentDidMount () {
+    /* eslint-disable */
+    // Kismetric code
+    var _kmq = _kmq || [];
+    var _kmk = _kmk || '3377e7168a845ea4ea40f12c6853255b9192f2db';
+    _kms('//i.kissmetrics.com/i.js');
+    _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+    /* eslint-enable */
+  }
+  shouldComponentUpdate = () => false
+  render () {
+    const { children, title, description } = this.props
+    return (<ThemeProvider theme={theme}>
+      <StaticQuery
+        query={graphql`
+          query {
+            site {
+              siteMetadata {
+                description
+                discussShortName
+                googleSearchConsoleOwnershipId
+                siteUrl
+                title
+              }
             }
           }
-        }
-      `}
-      render={({ site: { siteMetadata } }) => (<Fragment>
-        <Helmet>
-          <html lang='en' amp />
-          <title>{title ? `${siteMetadata.title}: ${title}`: siteMetadata.title}</title>
-          <meta name='description' content={description || siteMetadata.description} />
-          <meta property='og:title' content={title} />
-          <meta property='og:description' content={description || siteMetadata.description} />
-          <meta name='twitter:card' content='summary' />
-          <meta name='twitter:creator' content='PEM___' />
-          <meta name='google-site-verification' content={siteMetadata.googleSearchConsoleOwnershipId} />
-        </Helmet>
-      <Nav title={siteMetadata.title} />
-      <Main>
-        <LayoutDiv>{children({ siteMetadata })}</LayoutDiv>
-      </Main>
-      <GlobalStyle />
-    </Fragment>)}
-    />
-  </ThemeProvider>)
-}
-Layout.propTypes = {
-  children: any.isRequired,
-  description: string,
-  title: string
+        `}
+        render={({ site: { siteMetadata } }) => (<Fragment>
+          <Helmet>
+            <html lang='en' amp />
+            <title>{title ? `${siteMetadata.title}: ${title}`: siteMetadata.title}</title>
+            <meta name='description' content={description || siteMetadata.description} />
+            <meta property='og:title' content={title} />
+            <meta property='og:description' content={description || siteMetadata.description} />
+            <meta name='twitter:card' content='summary' />
+            <meta name='twitter:creator' content='PEM___' />
+            <meta name='google-site-verification' content={siteMetadata.googleSearchConsoleOwnershipId} />
+          </Helmet>
+        <Nav title={siteMetadata.title} />
+        <Main>
+          <LayoutDiv>{children({ siteMetadata })}</LayoutDiv>
+        </Main>
+        <GlobalStyle />
+      </Fragment>)}
+      />
+    </ThemeProvider>)
+  }
 }
