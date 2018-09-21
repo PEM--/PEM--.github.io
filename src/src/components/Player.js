@@ -27,7 +27,7 @@ export default class Player extends Component {
     type: string
   }
   static defaultProps = {
-    type: 'https://www.youtube.com/watch?'
+    type: 'https://www.youtube.com/watch?v='
   }
   shouldComponentUpdate = () => false
   render () {

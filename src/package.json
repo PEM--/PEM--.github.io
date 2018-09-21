@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@babel/core": "^7.1.0",
-    "@mdx-js/mdx": "^0.15.2",
+    "@mdx-js/mdx": "^0.15.3",
     "@mdx-js/tag": "^0.15.0",
     "@reach/router": "^1.1.1",
     "babel-plugin-styled-components": "^1.7.1",
