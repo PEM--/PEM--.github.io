@@ -741,6 +741,16 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@reach/router@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.0.tgz#27d8e12e716f9ea99e370f5ec67cb2b17f619f2f"
+  dependencies:
+    create-react-context "^0.2.1"
+    invariant "^2.2.3"
+    prop-types "^15.6.1"
+    react-lifecycles-compat "^3.0.4"
+    warning "^3.0.0"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -3864,9 +3874,9 @@ eslint-config-google@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/eslint-config-google/-/eslint-config-google-0.10.0.tgz#09adb5b1514aa99618ad0515e0cce59b8ca82d90"
 
-eslint-config-prettier@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.0.1.tgz#479214f64c1a4b344040924bfb97543db334b7b1"
+eslint-config-prettier@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.1.0.tgz#2c26d2cdcfa3a05f0642cd7e6e4ef3316cdabfa2"
   dependencies:
     get-stdin "^6.0.0"
 
@@ -5003,9 +5013,9 @@ gatsby-transformer-sharp@^2.1.1:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.6.tgz#39523eb63837ce3cb24b7d7dbe97ad08abb1f308"
+gatsby@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.7.tgz#a2c2865e0dbe1845e5e0f3d1962af6c5b76fbfab"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5826,9 +5836,9 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
-husky@^1.0.0-rc.14:
-  version "1.0.0-rc.14"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-1.0.0-rc.14.tgz#e1380575fe4cf17e1ca98791395c1baafa8064c7"
+husky@^1.0.0-rc.15:
+  version "1.0.0-rc.15"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-1.0.0-rc.15.tgz#f1545d15c7f34d5db19e40b70df07ac9a362673d"
   dependencies:
     cosmiconfig "^5.0.6"
     execa "^0.9.0"
