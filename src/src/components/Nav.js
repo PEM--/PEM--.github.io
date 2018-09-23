@@ -4,13 +4,15 @@ import { Link } from  'gatsby'
 import { position, size } from 'polished'
 import { string } from 'prop-types'
 
-const Header = styled.header`
+import noUpdate from '../hoc/noUpdate'
+
+const Header = noUpdate(styled.header`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth}px;
   a { text-decoration: none; }
-`
+`)
 
-const LinkList = styled.ul`
+const LinkList = noUpdate(styled.ul`
   display: block;
   list-style-type: none;
   margin: 0;
@@ -49,9 +51,9 @@ const LinkList = styled.ul`
       color: ${({ theme }) => theme.headerColor};
     }
   }
-`
+`)
 
-const HomeLink = styled(Link)`
+const HomeLink = noUpdate(styled(Link)`
   display: block;
   text-align: center;
   h1 {
@@ -74,7 +76,7 @@ const HomeLink = styled(Link)`
       color: ${({ theme }) => theme.secondaryColor};
     }
   }
-`
+`)
 
 export default class Nav extends Component {
   static propTypes = {

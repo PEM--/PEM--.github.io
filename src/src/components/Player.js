@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import ReactPlayer from 'react-player'
+import ReactPlayerRaw from 'react-player'
 import styled from 'styled-components'
 import { position } from 'polished'
 import { string } from 'prop-types'
 
-const PlayerWrapper = styled.div`
+import noUpdate from '../hoc/noUpdate'
+
+const PlayerWrapper = noUpdate(styled.div`
   text-align: center;
   .maximized {
     display: inline-block;
@@ -19,7 +21,9 @@ const PlayerWrapper = styled.div`
   .reactPlayer {
     ${position('absolute', 0, null, null, 0)}
   }
-`
+`)
+
+const ReactPlayer = noUpdate(ReactPlayerRaw)
 
 export default class Player extends Component {
   static propTypes = {

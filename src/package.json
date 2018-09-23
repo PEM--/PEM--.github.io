@@ -45,6 +45,7 @@
     "react-share": "^2.3.1",
     "react-textarea-autosize": "^7.0.4",
     "react-typography": "^0.16.13",
+    "recompose": "^0.30.0",
     "styled-components": "beta",
     "typography": "^0.16.17",
     "typography-theme-lawton": "^0.15.10"

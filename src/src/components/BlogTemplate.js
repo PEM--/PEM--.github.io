@@ -1,5 +1,5 @@
 import Disqus from 'disqus-react'
-import React, { Fragment, PureComponent } from 'react'
+import React, { Fragment, Component } from 'react'
 import format from 'date-fns/format'
 
 import Contribute from '../components/Contribute'
@@ -8,7 +8,8 @@ import Layout from '../components/Layout'
 import MdxRenderer from '../components/MdxRenderer'
 import ShareIconBar from '../components/ShareIconBar'
 
-export default class BlogTemplate extends PureComponent {
+export default class BlogTemplate extends Component {
+  shouldComponentUpdate = () => false
   render () {
     const { children, location: { href }, pageContext: { frontmatter } } = this.props
     const discussConfig = {
