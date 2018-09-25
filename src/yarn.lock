@@ -700,9 +700,9 @@
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.6.tgz#004b98298d04c7ca3b4f50ca2035d4f60d2eed1b"
 
-"@mdx-js/mdx@^0.15.3":
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.15.3.tgz#8ab4968b7d9f447ecc39285872c16f79dcd7c25b"
+"@mdx-js/mdx@^0.15.4":
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.15.4.tgz#fb1799158e63eacd0dbdecb649b13cea55377ee8"
   dependencies:
     change-case "^3.0.2"
     mdast-util-to-hast "^3.0.0"
@@ -4932,9 +4932,9 @@ gatsby-mdx@^0.1.4:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"
 
-gatsby-plugin-manifest@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.2.tgz#a978228dc9c252812f8592d7fc51a92769b3f004"
+gatsby-plugin-manifest@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.3.tgz#25b0e5a882ae8f8687da5104776a82eaa4b10623"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -5080,9 +5080,9 @@ gatsby-source-filesystem@^2.0.1:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-transformer-sharp@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.1.tgz#f0b69b5c9d2be16a36a124bae24ba3ee13b3a490"
+gatsby-transformer-sharp@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.2.tgz#eb28370a49e33bd500ba540f2c00259f28fb246c"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -5091,9 +5091,9 @@ gatsby-transformer-sharp@^2.1.1:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.7.tgz#a2c2865e0dbe1845e5e0f3d1962af6c5b76fbfab"
+gatsby@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.8.tgz#3cfe58c3f1870c8f9383fbdd90a32b2b00dd1eb5"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -9302,9 +9302,9 @@ react-dom@~15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-emoji-render@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/react-emoji-render/-/react-emoji-render-0.4.5.tgz#acdeef97e81158602cf028d0f3c35b6aafb1f2d4"
+react-emoji-render@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/react-emoji-render/-/react-emoji-render-0.4.6.tgz#0f8ea55a3bde06ae241e075bbc534ed715803692"
   dependencies:
     classnames "^2.2.5"
     emoji-regex "^6.4.1"
@@ -11746,9 +11746,9 @@ victory-box-plot@^30.3.1:
     prop-types "^15.5.8"
     victory-core "^30.3.1"
 
-victory-brush-container@^30.3.1:
-  version "30.3.1"
-  resolved "https://registry.yarnpkg.com/victory-brush-container/-/victory-brush-container-30.3.1.tgz#12270ff9523ff1af60aa99d081ee097f8f053c75"
+victory-brush-container@^30.4.0:
+  version "30.4.0"
+  resolved "https://registry.yarnpkg.com/victory-brush-container/-/victory-brush-container-30.4.0.tgz#41b2d5e6e848148f897921d069bf5d2c91c89fb8"
   dependencies:
     lodash "^4.17.5"
     prop-types "^15.5.8"
@@ -11795,12 +11795,12 @@ victory-core@^30.3.1:
     prop-types "^15.5.8"
     react-fast-compare "^2.0.0"
 
-victory-create-container@^30.3.1:
-  version "30.3.1"
-  resolved "https://registry.yarnpkg.com/victory-create-container/-/victory-create-container-30.3.1.tgz#6bb7c2ebab415db3ef031e1ea761a3beaad961ba"
+victory-create-container@^30.4.0:
+  version "30.4.0"
+  resolved "https://registry.yarnpkg.com/victory-create-container/-/victory-create-container-30.4.0.tgz#4370d4d599220e38fb0274c172b719ca82964a98"
   dependencies:
     lodash "^4.17.5"
-    victory-brush-container "^30.3.1"
+    victory-brush-container "^30.4.0"
     victory-core "^30.3.1"
     victory-cursor-container "^30.3.1"
     victory-selection-container "^30.3.1"
@@ -11932,20 +11932,20 @@ victory-zoom-container@^30.3.1:
     prop-types "^15.5.8"
     victory-core "^30.3.1"
 
-victory@^30.3.1:
-  version "30.3.1"
-  resolved "https://registry.yarnpkg.com/victory/-/victory-30.3.1.tgz#dd1903aa309fa511d5f9a397a16fc7a42a15591c"
+victory@^30.4.0:
+  version "30.4.0"
+  resolved "https://registry.yarnpkg.com/victory/-/victory-30.4.0.tgz#5767f0acba5967a6167f6abd28f1b4cc2887bc4b"
   dependencies:
     victory-area "^30.3.1"
     victory-axis "^30.3.1"
     victory-bar "^30.3.1"
     victory-box-plot "^30.3.1"
-    victory-brush-container "^30.3.1"
+    victory-brush-container "^30.4.0"
     victory-brush-line "^30.3.1"
     victory-candlestick "^30.3.1"
     victory-chart "^30.3.1"
     victory-core "^30.3.1"
-    victory-create-container "^30.3.1"
+    victory-create-container "^30.4.0"
     victory-cursor-container "^30.3.1"
     victory-errorbar "^30.3.1"
     victory-group "^30.3.1"
