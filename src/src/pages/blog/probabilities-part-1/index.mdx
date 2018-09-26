@@ -11,25 +11,38 @@ import Katex from '../../../components/Katex'
 
 ## Definitions
 
-A **random experiment** is an experiment <Katex inline formulae='\varepsilon' /> for which, with the same conditions,
+A **random experiment** is an experiment <Katex formulae='\varepsilon' /> for which, with the same conditions,
 each repetition ends up with many possible results and from which we cannot infere its result in advance.
 
-The **space of possible results** of this experiment is called **state space** <Katex inline formulae='\Omega' />.
+The **space of possible results** of this experiment is called **state space** <Katex formulae='\Omega' />.
 
-One **result** of the experiment is <Katex inline formulae='\omega \in \Omega' />.
-
-> Examples:
-> * Coin flipping: <Katex inline formulae='\Omega = \{\text{head},\text{tail}\} \hArr \Omega = \{0,1\}' />
-> * Dice throwing: <Katex inline formulae='\Omega = \{1, 2, 3, 4, 5, 6\}' />
-> * Lifetime of a bacterium: <Katex inline formulae='\Omega = \lbrack 0, +\infty \lbrack' />
-> * Dart on an target of 30cm ø: <Katex inline formulae='\Omega = \{(x, y), \sqrt{x^2+y^2} \le 15 \}' />
-> * Stock price of a financial asset on a time interval <Katex inline formulae='\lbrack t_1, t_2 \rbrack' />: <Katex inline formulae='\Omega = S(\lbrack t_1, t_2 \rbrack, \reals_+)' />
-
-A **random event** <Katex inline formulae='A' /> associated to <Katex inline formulae='\varepsilon' />
-is a subset of <Katex inline formulae='\Omega' />. 
+One **result** of the experiment is <Katex formulae='\omega \in \Omega' />.
 
 > Examples:
-> * Coin flipped is head: <Katex inline formulae='A = \{0\}' />
-> * For *n* coin flipped, <Katex inline formulae='\Omega = \{0, 1\}^n' />, <Katex inline formulae='\omega = (\omega_1, \dots ,\omega_n)' />,
+> * Coin flipping: <Katex formulae='\Omega = \{\text{head},\text{tail}\} \hArr \Omega = \{0,1\}' />
+> * Dice throwing: <Katex formulae='\Omega = \{1, 2, 3, 4, 5, 6\}' />
+> * Lifetime of a bacterium: <Katex formulae='\Omega = \lbrack 0, +\infty \lbrack' />
+> * Dart on an target of 30cm ø: <Katex formulae='\Omega = \{(x, y), \sqrt{x^2+y^2} \le 15 \}' />
+> * Stock price of a financial asset on a time interval <Katex formulae='\lbrack t_1, t_2 \rbrack' />: <Katex formulae='\Omega = S(\lbrack t_1, t_2 \rbrack, \reals_+)' />
+
+A **random event** *A* associated to <Katex formulae='\varepsilon' />
+is a subset of <Katex formulae='\Omega' />. 
+
+> Examples:
+> * Coin flipped is head: <Katex formulae='A = \{0\}' />
+> * For *n* coin flipped, <Katex formulae='\Omega = \{0, 1\}^n' />, <Katex formulae='\omega = (\omega_1, \dots ,\omega_n)' />,
     the number of head is over or equal to the number of head:
-    <Katex inline formulae='A = \{ \omega \in \Omega, \sum^n_{i=1} \omega _i \ge \frac{n}{2} \}' />
+    <Katex formulae='A = \{ \omega \in \Omega, \sum^n_{i=1} \omega _i \ge \frac{n}{2} \}' />
+
+For *A* and *B*, 2 events, we can say:
+* `not`: *A* isn't reached: <Katex formulae='A^c' /> (aka A complementary).
+* `and`: *A* and *B* are reached: <Katex formulae='A \cap B' />.
+* `or`: *A* or *B* are reached: <Katex formulae='A \cup B' />.
+* `imply`: *A* reached implies *B* reached: <Katex formulae='A_\text{reached} \rArr B_\text{reached} ~\text{then}~ A \subset B' />.
+* `incompatible`: *A* and *B* are incompatible (incongruous, conflicting, ...): <Katex formulae='A \cap B = \empty' />.
+* `always true`: <Katex formulae='\Omega' /> is the certain event: all results of the experiment take their value into it.
+* `always false`: <Katex formulae='\empty' /> is the impossible event.
+
+<Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
+
+<Katex displayMode formulae='\forall x \in \mathcal{A} \rArr A \cap B \in \mathcal{A}, A \cup B \in \mathcal{A}, A^c \in \mathcal{A} \text{ and } \Omega \in \mathcal{A}, \empty \in \mathcal{A}' />
