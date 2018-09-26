@@ -16,15 +16,16 @@ const BlogTemplate = ({ children, location: { href }, pageContext: { frontmatter
     url: href
   }
   return (<Layout {...frontmatter}>
-    {({ siteMetadata }) => (<Fragment>
-      <H1>{frontmatter.title}<small>{format(frontmatter.date, 'DD/MM/YY')}</small></H1>
-      {frontmatter.contribute && <Contribute slug={frontmatter.slug} />}
-      <MdxRenderer>{children}</MdxRenderer>
-      <ShareIconBar href={href} title={frontmatter.title} />
-      {frontmatter.comment && <Disqus.DiscussionEmbed
-        config={discussConfig}
-        shortName={siteMetadata.discussShortName} />}
-    </Fragment>)}
+    {({ siteMetadata }) => {
+      return (<Fragment>
+        <H1>{frontmatter.title}<small>{format(frontmatter.date, 'DD/MM/YY')}</small></H1>
+        {frontmatter.contribute && <Contribute slug={frontmatter.slug} />}
+        <MdxRenderer>{children}</MdxRenderer>
+        <ShareIconBar href={href} title={frontmatter.title} />
+        {frontmatter.comment && <Disqus.DiscussionEmbed
+          config={discussConfig}
+          shortname={siteMetadata.discussShortName} />}
+      </Fragment>)}}
   </Layout>)
 }
 
