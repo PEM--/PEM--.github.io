@@ -1,0 +1,26 @@
+---
+contribute: true
+comment: true
+date: "2018-09-26"
+description: "Introduction to probability - part one"
+slug: "probabilities-part-1"
+title: "Probabilities part 1"
+type: "blog"
+---
+import Katex from '../../../components/Katex'
+
+## Definitions
+
+A **random experiment** is an experiment <Katex inline formulae='\varepsilon' /> for which, with the same conditions,
+each repetition ends up with many possible results and from which we cannot infere its result in advance.
+
+The **space of possible results** of this experiment is called **state space** <Katex inline formulae='\Omega' />.
+
+One **result** of the experiment is <Katex inline formulae='\omega \in \Omega' />.
+
+> Examples:
+> * Coin flipping: <Katex inline formulae='\Omega = \{\text{head},\text{tail}\} \hArr \Omega = \{0,1\}' />
+> * Dice throwing: <Katex inline formulae='\Omega = \{1, 2, 3, 4, 5, 6\}' />
+> * Lifetime of a bacterium: <Katex inline formulae='\Omega = \lbrack 0, +\infty \lbrack' />
+> * Dart on an target of 30cm ø: <Katex inline formulae='\Omega = \{(x, y), \sqrt{x^2+y^2} \le 15 \}' />
+> * Stock price of a financial asset on a time interval <Katex inline formulae='\lbrack t_1, t_2 \rbrack' />: <Katex inline formulae='\Omega = S(\lbrack t_1, t_2 \rbrack, \reals_+)' />

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { object } from 'prop-types'
 
 import ClipboardButton from '../../components/ClipboardButton'
+import ExternalLink from '../../components/ExternalLink'
 import Katex from '../../components/Katex'
 import Layout from '../../components/Layout'
 import ShareIconBar from '../../components/ShareIconBar'
@@ -80,6 +81,7 @@ export default class KatexEditorPage extends Component {
       {({ siteMetadata }) => (<Fragment>
         <h1>{title}</h1>
         <KatexEditor />
+        <p>Usefull link: <ExternalLink href='https://katex.org/docs/supported.html' text='Katex supported functions' /></p>
         <ShareIconBar href={this.props.location.href} title={`${siteMetadata.title}: ${title}`}/>
       </Fragment>)}
     </Layout>)
