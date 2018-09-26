@@ -7,15 +7,16 @@ module.exports = {
       { resolve: 'gatsby-remark-smartypants' },
       {
         resolve: 'gatsby-remark-images',
-        options: {
+        pluginOptions: {
           maxWidth: theme.maxWidth,
           linkImagesToOriginal: false,
+          wrapperStyle: 'max-width: 100%;',
           withWebp: { quality: 50 }
         }
       },
       {
         resolve: 'gatsby-remark-prismjs',
-        options: {
+        pluginOptions: {
           classPrefix: 'language-',
           inlineCodeMarker: null,
           aliases: {},
