@@ -149,6 +149,29 @@ If *I* is an infinite countable set, we define:
 And with:
 <Katex displayMode formulae='\bigcap_{i \in I} A_i \coloneqq \{ \omega \in \Omega \mid \exist i \in I, \omega \in A_i \}' />
 
+For 2 events *A* and *B*, we define the relative complement of A in B as:
+<Katex displayMode formulae='\textcolor{red}{B \setminus A} = B \cap A^c = \{ \omega \in \Omega \mid \omega \in B \text{ and } \omega \notin A \}' />
+<svg viewBox="0 0 960 200">
+  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+    <ellipse cx="520" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38z" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
+
+Their symetrical difference, noted <Katex formulae='A \triangle B' />, is defined by:
+<Katex displayMode formulae='\begin{aligned} \textcolor{red}{A \triangle B} &= (A \setminus B) \cup (B \setminus A) \\ &= (A \cup B) \setminus (B \cap A) \end{aligned}' />
+<svg viewBox="0 0 960 200">
+  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+    <ellipse cx="520" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38zM485 62c-10-4-22-5-35-5-41 0-75 19-75 43s34 44 75 44c13 0 25-2 35-6-24-7-40-21-40-38s16-31 40-38z" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
+
+
 ### Set of all events
 <Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
 
