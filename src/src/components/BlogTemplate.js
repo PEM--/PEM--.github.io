@@ -2,12 +2,20 @@ import Disqus from 'disqus-react'
 import React, { Fragment } from 'react'
 import format from 'date-fns/format'
 import moize from 'moize'
+import styled from 'styled-components'
 
 import Contribute from '../components/Contribute'
 import H1 from '../components/H1'
 import Layout from '../components/Layout'
 import MdxRenderer from '../components/MdxRenderer'
 import ShareIconBar from '../components/ShareIconBar'
+
+
+const CommentsContainer = styled.div`
+  @media print {
+    display: none;
+  }
+`
 
 const BlogTemplate = ({ children, location: { href }, pageContext: { frontmatter } }) => {
   const discussConfig = {
@@ -22,9 +30,11 @@ const BlogTemplate = ({ children, location: { href }, pageContext: { frontmatter
         {frontmatter.contribute && <Contribute slug={frontmatter.slug} />}
         <MdxRenderer>{children}</MdxRenderer>
         <ShareIconBar href={href} title={frontmatter.title} />
-        {frontmatter.comment && <Disqus.DiscussionEmbed
-          config={discussConfig}
-          shortname={siteMetadata.discussShortName} />}
+        {frontmatter.comment && (<CommentsContainer>
+          <Disqus.DiscussionEmbed
+            config={discussConfig}
+            shortname={siteMetadata.discussShortName} />
+        </CommentsContainer>)}
       </Fragment>)}}
   </Layout>)
 }

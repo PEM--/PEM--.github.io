@@ -10,6 +10,10 @@ const Header = noUpdate(styled.header`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth}px;
   a { text-decoration: none; }
+
+  @media print {
+    display: none;
+  }
 `)
 
 const LinkList = noUpdate(styled.ul`

@@ -37,6 +37,10 @@ const ShareIconBarContainer = styled.div`
     outline: 0;
     &:not(:first-of-type) { margin-left: 1.5em; }
   }
+
+  @media print {
+    display: none;
+  }
 `
 
 export default class ShareIconBar extends Component {

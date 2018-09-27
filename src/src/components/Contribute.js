@@ -9,6 +9,10 @@ const ContributeContainer = styled.span`
   display: block;
   ${position('absolute', '-.3em', 0, null, null)}
   font-size: .8em;
+
+  @media print {
+    display: none;
+  }
 `
 
 export default class Contribute extends Component {
