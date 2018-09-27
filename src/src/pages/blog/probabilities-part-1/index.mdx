@@ -109,8 +109,8 @@ They are distributive:
 
 ### Finite number of events
 Every non empty family of events <Katex formulae='\{A_i, i \in I\}' /> owns:
-* An union <Katex formulae='\bigcup_{i \in I} = A_i' />
-* An intersection <Katex formulae='\bigcap_{i \in I} = A_i' />
+* An union <Katex formulae='\bigcup_{i \in I} A_i' />
+* An intersection <Katex formulae='\bigcap_{i \in I} A_i' />
 
 > Examples:
 > For *I* with cardinality of 3:
@@ -136,6 +136,12 @@ Every non empty family of events <Katex formulae='\{A_i, i \in I\}' /> owns:
       <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
     </g>
   </svg>
+
+We can deduce the following properties for complementary:
+<Katex displayMode formulae='\Big(\bigcup_{i \in I} A_i \Big)^c = \bigcap_{i \in I} A_i^c ~~;~~ \Big(\bigcap_{i \in I} A_i \Big)^c = \bigcup_{i \in I} A_i^c' />
+
+And the following ones for distributivity:
+<Katex displayMode formulae='B \cap \Big(\bigcup_{i \in I} A_i \Big) = \bigcup_{i \in I} (B \cup A_i^c) ~~;~~ B \cup \Big(\bigcap_{i \in I} A_i \Big) = \bigcap_{i \in I} (B \cap A_i^c)' />
 
 ### Set of all events
 <Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
