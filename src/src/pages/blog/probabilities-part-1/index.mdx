@@ -30,8 +30,13 @@ One **result** of the experiment is <Katex formulae='\omega \in \Omega' />.
 > * Dart on an target of 30cm ø: <Katex formulae='\Omega = \{(x, y), \sqrt{x^2+y^2} \le 15 \}' />
 > * Stock price of a financial asset on a time interval <Katex formulae='\lbrack t_1, t_2 \rbrack' />: <Katex formulae='\Omega = S(\lbrack t_1, t_2 \rbrack, \reals_+)' />
 
-A **random event** *A* associated to <Katex formulae='\varepsilon' />
-is a subset of <Katex formulae='\Omega' />. 
+A **random event** *A* associated to <Katex formulae='\varepsilon' /> is a subset of <Katex formulae='\Omega' />:
+<svg viewBox="0 0 960 200" width="960" height="200">
+  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+    <ellipse cx="480" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
 
 > Examples:
 > * Coin flipped is head: <Katex formulae='A = \{0\}' />
@@ -40,13 +45,30 @@ is a subset of <Katex formulae='\Omega' />.
     <Katex formulae='A = \{ \omega \in \Omega, \sum^n_{i=1} \omega _i \ge \frac{n}{2} \}' />
 
 For *A* and *B*, 2 events, we can say:
-* `not`: *A* isn't reached: <Katex formulae='A^c' /> (aka A complementary).
+* `not`: *A* isn't reached: <Katex formulae='\textcolor{red}{A^c} = \{ \omega \in \Omega \mid \omega \notin A \}' /> (aka A complementary or A inverse):
+  <svg viewBox="0 0 960 200" width="960" height="200">
+    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+      <path fill="#E70808" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+      <ellipse cx="480" cy="100" fill="#FFF" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
 * `and`: *A* and *B* are reached: <Katex formulae='A \cap B' />.
-* `or`: *A* or *B* are reached: <Katex formulae='A \cup B' />.
+* `or`: *A* or *B* are reached: <Katex formulae='\textcolor{red}{A \cup B} = \{ \omega \in \Omega \mid \omega \in A \text{ or } \omega \in B \}' /> (aka the union):
+  <svg viewBox="0 0 960 200" width="960" height="200">
+    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+      <ellipse cx="450" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+      <ellipse cx="520" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+      <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
 * `imply`: *A* reached implies *B* reached: <Katex formulae='A_\text{reached} \rArr B_\text{reached} ~\text{then}~ A \subset B' />.
 * `incompatible`: *A* and *B* are incompatible (incongruous, conflicting, ...): <Katex formulae='A \cap B = \empty' />.
 * `always true`: <Katex formulae='\Omega' /> is the certain event: all results of the experiment take their value into it.
 * `always false`: <Katex formulae='\empty' /> is the impossible event.
+
+Hence, we have the following properties:
+<Katex displayMode formulae='(A^c)^c = A ~~;~~ \empty^c = \Omega ~~;~~ \Omega^c = \empty' />
 
 <Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
 
