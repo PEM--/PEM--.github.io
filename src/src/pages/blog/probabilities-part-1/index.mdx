@@ -81,7 +81,30 @@ These operations are associative and commutative:
 <Katex displayMode formulae='\begin{aligned} A \cup B = B \cup A &\text{ ; } A \cap B = B \cap A \\ (A \cup B) \cup C = A \cup (B \cup C) &\text{ ; } (A \cap B) \cap C = A \cap (B \cap C) \\ \end{aligned}' />
 They also have the following properties:
 <Katex displayMode formulae='\begin{aligned} A \cup A = A &~~;~~ A \cap A = A \\ A \cup \empty = A ~~;~~ A \cap \empty = \empty &~~;~~ A \cup \Omega = \Omega ~~;~~ A \cap \Omega = A \\ A \cup A^c = \Omega &~~;~~ A \cap A^c = \empty  \end{aligned}' />
+They are distributive:
 
+* <Katex formulae='\color{red} A \cap (B \cup C) = (A \cap B) \cup (A \cap C)' />:
+  <svg viewBox="0 0 960 200">
+    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M480 45a40 40 0 0 1 0 70 40 40 0 0 1 0-70z" vector-effect="non-scaling-stroke"/>
+      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M500 85a40 40 0 0 1-60 30 40 40 0 0 1 60-30z" vector-effect="non-scaling-stroke"/>
+      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
+* <Katex formulae='\color{red} A \cup (B \cap C) = (A \cup B) \cap (A \cup C)' />:
+  <svg viewBox="0 0 960 200">
+    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M520 115c-6 3-13 5-20 5-20 0-37-15-40-35 6-3 13-5 20-5 20 0 37 15 40 35z" vector-effect="non-scaling-stroke"/>
+      <circle cx="460" cy="80" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
 
 <Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
 

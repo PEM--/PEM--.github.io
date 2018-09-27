@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="0 0 960 200">
+  <defs>
+    <clipPath id="a">
+      <path d="M0 0h960v200H0z"/>
+    </clipPath>
+  </defs>
+  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
+    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
+    <circle cx="460" cy="80" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+    <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M520 115c-6 3-13 5-20 5-20 0-37-15-40-35 6-3 13-5 20-5 20 0 37 15 40 35z" vector-effect="non-scaling-stroke"/>
+    <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+    <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+    <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
