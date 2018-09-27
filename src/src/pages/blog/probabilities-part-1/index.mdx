@@ -21,7 +21,7 @@ each repetition ends up with many possible results and from which we cannot infe
 
 The **space of possible results** of this experiment is called **state space** <Katex formulae='\Omega' />.
 
-One **result** of the experiment is <Katex formulae='\omega \in \Omega' />.
+One **result** of the experiment is <Katex formulae='\omega \in \Omega' />. Results may be called achievements.
 
 > Examples:
 > * Coin flipping: <Katex formulae='\Omega = \{\text{head},\text{tail}\} \hArr \Omega = \{0,1\}' />
@@ -52,6 +52,8 @@ For *A* and *B*, 2 events of <Katex formulae='\Omega' />, so that <Katex formula
       <ellipse cx="480" cy="100" fill="#FFF" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
     </g>
   </svg>
+  For the complementary, we can deduce the following properties:
+  <Katex displayMode formulae='(A^c)^c = A ~~;~~ \empty^c = \Omega ~~;~~ \Omega^c = \empty' />
 * `and`: *A* and *B* are reached: <Katex formulae='\textcolor{red}{A \cap B} = \{ \omega \in \Omega \mid \omega \in A \text{ and } \omega \in B \}' /> (aka the intersection):
   <svg viewBox="0 0 960 200">
     <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
@@ -75,8 +77,9 @@ For *A* and *B*, 2 events of <Katex formulae='\Omega' />, so that <Katex formula
 * `always true`: <Katex formulae='\Omega' /> is the certain event: all results of the experiment take their value into it.
 * `always false`: <Katex formulae='\empty' /> is the impossible event.
 
-Hence, we deduce the following properties:
-<Katex displayMode formulae='(A^c)^c = A ~~;~~ \empty^c = \Omega ~~;~~ \Omega^c = \empty' />
+These operations are associative and commutative:
+<Katex displayMode formulae='\begin{aligned} A \cup B = B \cup A &\text{ ; } A \cap B = B \cap A \\ (A \cup B) \cup C = A \cup (B \cup C) &\text{ ; } (A \cap B) \cap C = A \cap (B \cap C) \\ \end{aligned}' />
+
 
 <Katex formulae='\mathcal{A}' /> (aka A rounded) is the set of all events. It models the information of all results of the experiment.
 
