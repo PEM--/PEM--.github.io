@@ -8,6 +8,7 @@ title: "Probabilities part 1"
 type: "blog"
 ---
 import Katex from '../../../components/Katex'
+import S from '../../../components/Svg'
 
 ## Introduction
 These are my personal notes on the course from Polytechnique Paris :
@@ -32,12 +33,10 @@ One **result** of the experiment is <Katex formulae='\omega \in \Omega' />. Resu
 
 ### Random event
 A **random event** *A* associated to <Katex formulae='\varepsilon' /> is a subset of <Katex formulae='\Omega' />. <Katex formulae='\textcolor{red}A \subset \Omega' />:
-<svg viewBox="0 0 960 200">
-  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-    <ellipse cx="480" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-  </g>
-</svg>
+<S.Svg>
+  <S.Path d="M330 10h300v180H330z" />
+  <S.Ellipse className='red' cx="480" cy="100" rx="75" ry="44" />
+</S.Svg>
 
 > Examples:
 > * Coin flipped is head: <Katex formulae='A = \{0\}' />
@@ -47,32 +46,26 @@ A **random event** *A* associated to <Katex formulae='\varepsilon' /> is a subse
 
 For *A* and *B*, 2 events of <Katex formulae='\Omega' />, so that <Katex formulae='\forall A,B \in \Omega' />, we can say:
 * `not`: *A* isn't reached: <Katex formulae='\textcolor{red}{A^c} = \{ \omega \in \Omega \mid \omega \notin A \}' /> (aka A complementary or A inverse):
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#E70808" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="480" cy="100" fill="#FFF" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path className='red' d="M330 10h300v180H330z" />
+    <S.Ellipse className='white' cx="480" cy="100" rx="75" ry="44" />
+  </S.Svg>
   For the complementary, we can deduce the following properties:
   <Katex displayMode formulae='(A^c)^c = A ~~;~~ \empty^c = \Omega ~~;~~ \Omega^c = \empty' />
 * `and`: *A* and *B* are reached: <Katex formulae='\textcolor{red}{A \cap B} = \{ \omega \in \Omega \mid \omega \in A \text{ and } \omega \in B \}' /> (aka the intersection):
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <path fill="#E70808" fill-rule="evenodd" stroke-miterlimit="3" d="M485 62c24 7 40 21 40 38s-16 31-40 38c-24-7-40-21-40-38s16-31 40-38z" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="520" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z" />
+    <S.Path className='red' d="M485 62c24 7 40 21 40 38s-16 31-40 38c-24-7-40-21-40-38s16-31 40-38z" />
+    <S.Ellipse cx="520" cy="100" rx="75" ry="44"/>
+    <S.Ellipse cx="450" cy="100" rx="75" ry="44"/>
+  </S.Svg>
 * `or`: *A* or *B* are reached: <Katex formulae='\textcolor{red}{A \cup B} = \{ \omega \in \Omega \mid \omega \in A \text{ or } \omega \in B \}' /> (aka the union):
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="450" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="520" cy="100" fill="#E70808" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-      <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z"/>
+    <S.Ellipse className='red' cx="450" cy="100" rx="75" ry="44"/>
+    <S.Ellipse className='red' cx="520" cy="100" rx="75" ry="44"/>
+    <S.Ellipse cx="450" cy="100" rx="75" ry="44"/>
+  </S.Svg>
 * `imply`: *A* reached implies *B* reached: <Katex formulae='A_\text{reached} \rArr B_\text{reached} ~\text{then}~ A \subset B' />.
   <Katex displayMode formulae='\omega \in A \rArr \omega \in B' />
   <Katex displayMode formulae='A \subset B = B \supset A' />
@@ -88,27 +81,23 @@ They also have the following properties:
 They are distributive:
 
 * <Katex formulae='\color{red} A \cap (B \cup C) = (A \cap B) \cup (A \cap C)' />:
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M480 45a40 40 0 0 1 0 70 40 40 0 0 1 0-70z" vector-effect="non-scaling-stroke"/>
-      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M500 85a40 40 0 0 1-60 30 40 40 0 0 1 60-30z" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z"/>
+    <S.Path className='red' d="M480 45a40 40 0 0 1 0 70 40 40 0 0 1 0-70z"/>
+    <S.Path className='red' d="M500 85a40 40 0 0 1-60 30 40 40 0 0 1 60-30z"/>
+    <S.Circle cx="460" cy="80" r="40"  />
+    <S.Circle cx="500" cy="80" r="40"  />
+    <S.Circle cx="480" cy="120" r="40"  />
+  </S.Svg>
 * <Katex formulae='\color{red} A \cup (B \cap C) = (A \cup B) \cap (A \cup C)' />:
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M520 115c-6 3-13 5-20 5-20 0-37-15-40-35 6-3 13-5 20-5 20 0 37 15 40 35z" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z"/>
+    <S.Path className='red' d="M520 115c-6 3-13 5-20 5-20 0-37-15-40-35 6-3 13-5 20-5 20 0 37 15 40 35z"/>
+    <S.Circle className='red' cx="460" cy="80" r="40" />
+    <S.Circle cx="460" cy="80" r="40" />
+    <S.Circle cx="500" cy="80" r="40" />
+    <S.Circle cx="480" cy="120" r="40" />
+  </S.Svg>
 
 ### Finite number of events
 Every non empty family of events <Katex formulae='\{A_i, i \in I\}' /> owns:
@@ -118,27 +107,23 @@ Every non empty family of events <Katex formulae='\{A_i, i \in I\}' /> owns:
 > Examples:
 > For *I* with cardinality of 3:
 > * <Katex formulae='\color{red} \bigcup_{i = 1}^{3} = A_1 \cup A_2 \cup A_3' />:
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <circle cx="480" cy="120" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="500" cy="80" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="red" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z"/>
+    <S.Circle className='red' cx="480" cy="120" r="40" />
+    <S.Circle className='red' cx="500" cy="80" r="40" />
+    <S.Circle className='red' cx="460" cy="80" r="40" />
+    <S.Circle cx="460" cy="80" r="40" />
+    <S.Circle cx="500" cy="80" r="40" />
+    <S.Circle cx="480" cy="120" r="40" />
+  </S.Svg>
 > * <Katex formulae='\color{red} \bigcap_{i = 1}^{3} = A_1 \cap A_2 \cap A_3' />:
-  <svg viewBox="0 0 960 200">
-    <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-      <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-      <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M500 85a40 40 0 0 0-40 0c2 13 9 24 20 30 11-6 18-17 20-30z" vector-effect="non-scaling-stroke"/>
-      <circle cx="460" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="500" cy="80" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-      <circle cx="480" cy="120" r="40" fill="none" stroke-miterlimit="3" vector-effect="non-scaling-stroke"/>
-    </g>
-  </svg>
+  <S.Svg>
+    <S.Path d="M330 10h300v180H330z"/>
+    <S.Path className='red' d="M500 85a40 40 0 0 0-40 0c2 13 9 24 20 30 11-6 18-17 20-30z"/>
+    <S.Circle cx="460" cy="80" r="40" />
+    <S.Circle cx="500" cy="80" r="40" />
+    <S.Circle cx="480" cy="120" r="40" />
+  </S.Svg>
 
 We can deduce the following properties for complementary:
 <Katex displayMode formulae='\Big(\bigcup_{i \in I} A_i \Big)^c = \bigcap_{i \in I} A_i^c ~~;~~ \Big(\bigcap_{i \in I} A_i \Big)^c = \bigcup_{i \in I} A_i^c' />
@@ -154,25 +139,21 @@ And with:
 
 For 2 events *A* and *B*, we define the relative complement of A in B as:
 <Katex displayMode formulae='\textcolor{red}{B \setminus A} = B \cap A^c = \{ \omega \in \Omega \mid \omega \in B \text{ and } \omega \notin A \}' />
-<svg viewBox="0 0 960 200">
-  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-    <ellipse cx="520" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38z" vector-effect="non-scaling-stroke"/>
-  </g>
-</svg>
+<S.Svg viewBox="0 0 960 200">
+  <S.Path d="M330 10h300v180H330z"/>
+  <S.Ellipse cx="520" cy="100" rx="75" ry="44"/>
+  <S.Ellipse cx="450" cy="100" rx="75" ry="44"/>
+  <S.Path className='red' d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38z"/>
+</S.Svg>
 
 Their symetrical difference, noted <Katex formulae='A \triangle B' />, is defined by:
 <Katex displayMode formulae='\begin{aligned} \textcolor{red}{A \triangle B} &= (A \setminus B) \cup (B \setminus A) \\ &= (A \cup B) \setminus (B \cap A) \end{aligned}' />
-<svg viewBox="0 0 960 200">
-  <g stroke="#000" stroke-linecap="square" clip-path="url(#a)">
-    <path fill="#FFF" stroke-miterlimit="2" d="M330 10h300v180H330z" vector-effect="non-scaling-stroke"/>
-    <ellipse cx="520" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    <ellipse cx="450" cy="100" fill="none" stroke-miterlimit="3" rx="75" ry="44" vector-effect="non-scaling-stroke"/>
-    <path fill="red" fill-rule="evenodd" stroke-miterlimit="3" d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38zM485 62c-10-4-22-5-35-5-41 0-75 19-75 43s34 44 75 44c13 0 25-2 35-6-24-7-40-21-40-38s16-31 40-38z" vector-effect="non-scaling-stroke"/>
-  </g>
-</svg>
+<S.Svg viewBox="0 0 960 200">
+  <S.Path d="M330 10h300v180H330z"/>
+  <S.Ellipse cx="520" cy="100" rx="75" ry="44"/>
+  <S.Ellipse cx="450" cy="100" rx="75" ry="44"/>
+  <S.Path className='red' d="M485 62c10-4 22-5 35-5 41 0 75 19 75 43s-34 44-75 44c-13 0-25-2-35-6 24-7 40-21 40-38s-16-31-40-38zM485 62c-10-4-22-5-35-5-41 0-75 19-75 43s34 44 75 44c13 0 25-2 35-6-24-7-40-21-40-38s16-31 40-38z"/>
+</S.Svg>
 
 
 ### Set of all events
