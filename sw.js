@@ -11,8 +11,8 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("workbox-v3.6.1/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "workbox-v3.6.1"});
+importScripts("workbox-v3.6.2/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "workbox-v3.6.2"});
 
 workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline"});
 
@@ -39,11 +39,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "7504a76293e1fec40475f07c4ce76095"
+    "revision": "27612a88bf998a0ad2556ce0bfde47a4"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "63b709a25a7f05f7ee03074e3e4d3378"
+    "revision": "daefa8a51f4496fcdc66ec1396382e40"
   },
   {
     "url": "2-432dd9cb4002b212efaf.js"
