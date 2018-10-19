@@ -1,0 +1,15 @@
+---
+contribute: true
+comment: true
+date: "2018-10-19"
+description: "When using Matplotlib on MacOS, you may hit the error Python is not installed as a framework."
+slug: "python-is-not-installed-as-a-framework"
+title: "Python is not installed as a framework"
+type: "blog"
+---
+This error message is seriously misleading. Actually, Matplotlib requires a default backend
+in order to work. You can specify it in a dedicated file `~/.matplotlib/matplotlibrc`:
+
+```
+backend: TkAgg
+```
