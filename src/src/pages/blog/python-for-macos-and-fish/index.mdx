@@ -1,0 +1,84 @@
+---
+contribute: true
+comment: true
+date: "2018-10-24"
+description: "Installing Python 3.6 for macOS and Fish"
+slug: "python-for-macos-and-fish"
+title: "Python for macOS and Fish"
+type: "blog"
+---
+import Emoji from 'react-emoji-render'
+import Player from '../../../components/Player'
+
+## Python 3.6.5
+By default [Brew](https://brew.sh/) will install Python 3.7.0, the development release of Python. Though very stable,
+some commonly used library for machine learning like [Tensorflow](https://www.tensorflow.org/) may not work with this release.
+Hence, we need to specify the formula that was available for the latest stable release 3.6.5 (patch 1):
+
+```bash
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
+```
+
+> In case, you have an already installed Python release in 3.7.0, you can switch between release using:
+  ```bash
+  brew switch python 3.7.0
+  ```
+
+Check you installation:
+```bash
+$ python3 --version
+Python 3.6.5
+$ pip3 --version
+pip 18.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
+# For upgrading pip to its latest release
+$ pip3 install --upgrade pip
+```
+<br />
+
+## Virtualenv for Fish
+[Virtualenv](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv) is a Python tool
+that allows you to create virtual environment on a per project basis. Hence, you don't polute your global
+installation of Python and create a reproduceable development and production environment for your project
+(no more installation in a README <Emoji text=":wink:" />).
+
+Though compatible with Bash and Zsh, Virtualenv happens not to be working with [Fish](https://fishshell.com/).
+We need another package to make it work, [virtualfish](https://github.com/adambrenecki/virtualfish):
+```bash
+pip3 install virtualenv virtualfish
+```
+
+Activate it in your [dotfiles](https://github.com/PEM--/dotfiles/blob/master/config_omf/init.fish)'s Fish configuration
+(mines happens to be `~/.config_omf/init.fish`):
+```bash
+# Python integration
+eval (python3 -m virtualfish)
+```
+<br />
+
+## Creating a virtual environment in a project
+Once you start a project, create an environment in order to isolate the libraries that it will require
+and activate your Python 3 installation.
+
+```bash
+# This will produce an `env` directory with links to your Python 3 installation
+python3 -m virtualenv env
+# Activate this environment
+source ./env/bin/activate.fish
+```
+
+Now when you're installing new libraries from [Pypi](https://pypi.org/), they will get installed locally.
+This allows you to easily parse your project and extract all your requirements:
+
+```bash
+pip freeze > requirements.txt
+```
+
+When you need to install your project on a different environment or your coworker need to fork your project,
+installing the requirement is achieved via:
+```bash
+pip install -r requirements.txt
+```
+
+As a bonus, I like to create settings files for [VsCode](https://code.visualstudio.com/).
+More information in this video:
+<Player url='TILIcrrVABg' />
