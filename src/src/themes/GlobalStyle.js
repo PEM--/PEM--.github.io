@@ -8,11 +8,9 @@ const GlobalStyle = createGlobalStyle /* css */ `
   }
   div > p > .gatsby-resp-image-wrapper {
     max-width: 100% !important;
-    .gatsby-resp-image-background-image {
-      border: 1px solid ${({ theme }) => theme.lightGray};
-      border-radius: ${({ theme }) => theme.borderRadius};
-      overflow: hidden;
-    }
+    border: 1px solid ${({ theme }) => theme.lightGray};
+    border-radius: ${({ theme }) => theme.borderRadius};
+    overflow: hidden;
   }
   .katex-display { margin: 0 0 .5em; }
   .katex { font: 300 1.15em KaTeX_Main, serif; }
