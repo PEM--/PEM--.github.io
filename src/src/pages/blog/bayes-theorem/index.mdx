@@ -1,0 +1,66 @@
+---
+contribute: true
+comment: true
+date: "2018-12-21"
+description: "The formula of knowledge, full description and an applied example to cancer detection."
+slug: "bayes-theorem"
+title: "Bayes' theorem"
+type: "blog"
+---
+import Katex from '../../../components/Katex'
+
+## Canonical formulae
+<Katex displayMode formulae="P(A|B)=\frac{P(B|A) \cdot P(A)}{P(B)}" />
+
+## Application to a cancer study
+
+### Prior
+
+<Katex formulae="P(C) = 1\% = 0.01" />: probability to have cancer
+
+> <Katex formulae="P(\neg C)=1-P(C)=99\%=0.99" />: probability to not have cancer
+
+<Katex formulae="P(Pos|C) = 90\% = 0.9" />: Positive cancer test probability when patient has cancer
+
+This is often called the test **sensitivity**.
+
+> <Katex formulae="P(Pos|\neg C)=1-P(Pos|C)=10\%=0.1" />: False positive: positive cancer test while patient has no cancer
+
+<Katex formulae="P(Neg|\neg C) = P(\neg Pos|\neg C)=90\% = 0.9" />: probability to negatively detect cancer when patient has cancer 
+
+This is often called the test **specivity**.
+
+> <Katex formulae="P(Neg|C)=P(\neg Pos|C)=1-P(Neg|\neg C)=10\%=0.1" />: False negative: cancer test fails despite patient having cancer
+
+### Joint
+
+Joint probabilities are probabilities of two events.
+
+* A patient contracts cancer first, then is tested positively:
+
+  <Katex formulae="P(C,Pos) = P(C) \cdot P(Pos|C) = 0.01 \cdot 0.9 = 0.009" />
+
+* Another patient, cancer free, is tested positively:
+
+  <Katex formulae="P(\neg C,Pos) = P(\neg C) \cdot P(Pos|\neg C) = 0.99 \cdot 0.1 = 0.099" />
+
+### Normalizer
+
+We can deduce a normalizer value that groups the 2 populations (patient with cancer, patient cancer free) where the
+test is positive:
+
+<Katex formulae="P(Pos) = P(C, Pos) + P(\neg C, Pos) = 0.009 + 0.099 = 0.108" />
+
+<br /><br />
+
+### Posterior
+
+The probability of having a cancer knowing that the tests is positive:
+
+<Katex displayMode formulae="\begin{aligned} \\ P(C|Pos) &= \frac{P(Pos|C) \cdot P(C)}{P(Pos)} \\ &= \frac{P(Pos|C) \cdot P(C)}{P(C,Pos)+P(\neg C, Pos)} \\ &= \frac{P(C, Pos)}{P(Pos)} \\ &= \frac {0.009} {0.108}  \\ &\approx 8.3\% \\ \end{aligned}" />
+
+Identically, we can deduce the probability of being cancer free despite having a positive test:
+
+<Katex displayMode formulae="\begin{aligned} \\ P(\neg C|Pos) &= \frac{P(Pos|\neg C) \cdot P(\neg C)}{P(Pos)} \\ &= \frac{P(\neg C, Pos)}{P(Pos)} \\ &= \frac {0.099} {0.108}  \\ &\approx 91.67\% \\ \end{aligned}" />
+
+
