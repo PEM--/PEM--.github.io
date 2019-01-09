@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import format from 'date-fns/format'
 import moize from 'moize'
 import styled from 'styled-components'
+import { any, object } from 'prop-types'
 
 import Contribute from '../components/Contribute'
 import H1 from '../components/H1'
@@ -37,6 +38,11 @@ const BlogTemplate = ({ children, location: { href }, pageContext: { frontmatter
         </CommentsContainer>)}
       </Fragment>)}}
   </Layout>)
+}
+BlogTemplate.propTypes = {
+  children: any.isRequired,
+  location: object.isRequired,
+  pageContext: object.isRequired
 }
 
 const MoizedBlogTemplate = moize.react(BlogTemplate)
